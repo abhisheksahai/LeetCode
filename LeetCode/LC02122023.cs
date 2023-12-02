@@ -17,16 +17,61 @@ namespace LeetCode
             for (int i = 0; i < len; i++)
             {
                 int diff = target - nums[i];
-                if (map.ContainsKey(diff))
+                if (map.TryGetValue(diff, out int value))
                 {
-                    return [map[diff], i];
+                    return [value, i];
                 }
-                if (!map.ContainsKey(nums[i]))
-                {
-                    map.Add(nums[i], i);
-                }
+                map.TryAdd(nums[i], i);
             }
             return null;
         }
+
+        public static int AddNumber(int start, int end)
+        {
+            int sum = 0;
+            for (int i = start; i <= end; i++)
+            {
+                sum += i;
+            }
+            return sum;
+        }
+
+        public static void PrintStar(int num)
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void MinMaxArray(int[] nums)
+        {
+            int max = int.MinValue;
+            int min = int.MaxValue;
+            if (nums == null || nums.Length == 0)
+            {
+                Console.WriteLine($"Array is empty");
+                return;
+            }
+            if (nums.Length == 1)
+            {
+                max = min = nums[0];
+                Console.WriteLine($"Min {min} and Max {max}");
+                return;
+            }
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] > max)
+                    max = nums[i];
+                if (nums[i] < min)
+                    min = nums[i];
+            }
+            Console.WriteLine($"Min {min} and Max {max}");
+        }
+
     }
 }
