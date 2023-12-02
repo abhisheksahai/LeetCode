@@ -73,5 +73,22 @@ namespace LeetCode
             Console.WriteLine($"Min {min} and Max {max}");
         }
 
+        public static void PrintTriangleStar(int num)
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                string str = string.Empty;
+                for (int j = 0; j < num - i; j++)
+                {
+                    str = $" {str}";
+                }
+                for (int j = 1; j <= i; j++)
+                {
+                    str = $"{str}* ";
+                }
+                Console.WriteLine(str);
+            }
+        }
+
     }
 }

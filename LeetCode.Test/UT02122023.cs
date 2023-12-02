@@ -29,5 +29,11 @@ namespace LeetCode.Test
             LC02122023.MinMaxArray([1, 100, -90, 23, 1000, -90, -1000]);
             LC02122023.MinMaxArray([1]);
         }
+
+        [Test]
+        public void PrintTriangleStarTest()
+        {
+            LC02122023.PrintTriangleStar(5);
+        }
     }
 }
