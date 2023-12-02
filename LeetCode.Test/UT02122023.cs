@@ -35,5 +35,11 @@ namespace LeetCode.Test
         {
             LC02122023.PrintTriangleStar(5);
         }
+
+        [Test]
+        public void FirtSecondThirdMaxTest()
+        {
+            LC02122023.FirtSecondThirdMax([1, 2, 3, 9, 11, -90, 11, 200, -99, -1000, 500, 100]);
+        }
     }
 }
