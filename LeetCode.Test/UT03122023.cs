@@ -19,5 +19,12 @@
         {
             int result = LC03122023.RemoveAllMaximumMinimum([7, 8, 3, 4, 2, 9, 5]);
         }
+
+        [Test]
+        public void FascinatingTest()
+        {
+            bool valid = LC03122023.Fascinating(192);
+            bool invalid = LC03122023.Fascinating(853);
+        }
     }
 }

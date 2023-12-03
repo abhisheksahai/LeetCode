@@ -57,5 +57,28 @@
             Console.WriteLine($"{result[0]}");
             return result[0];
         }
+
+        public static bool Fascinating(int num)
+        {
+            if (num <= 99)
+            {
+                return false;
+            }
+            string numStr = $"{num}{num * 2}{num * 3}";
+            if (numStr.Length != 9)
+            {
+                return false;
+            }
+            HashSet<string> result = [];
+            for (int i = 0; i < numStr.Length; i++)
+            {
+                result.Add(numStr[i].ToString());
+            }
+            if (result.Count != 9 || result.Contains("0"))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
