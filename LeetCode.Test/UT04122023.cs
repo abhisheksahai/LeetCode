@@ -8,5 +8,11 @@
             LC04122023.IsPalindrome("121");
             LC04122023.IsPalindrome("madam");
         }
+
+        [Test]
+        public void IsPrimeTest()
+        {
+            bool result = LC04122023.IsPrime(23);
+        }
     }
 }
