@@ -80,5 +80,30 @@
             }
             return true;
         }
+
+        public static void PrintNumberTriangle(int num)
+        {
+            int count = 1;
+            for (int i = 1; i <= num; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write($"{count} ");
+                    count++;
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static int ReverseNumber(int num)
+        {
+            int result = 0;
+            while (num >= 1)
+            {
+                result = result * 10 + num % 10;
+                num /= 10;
+            }
+            return result;
+        }
     }
 }

@@ -26,5 +26,17 @@
             bool valid = LC03122023.Fascinating(192);
             bool invalid = LC03122023.Fascinating(853);
         }
+
+        [Test]
+        public void PrintNumberTriangleTest()
+        {
+            LC03122023.PrintNumberTriangle(5);
+        }
+
+        [Test]
+        public void ReverseNumberTest()
+        {
+            int result = LC03122023.ReverseNumber(121);
+        }
     }
 }
