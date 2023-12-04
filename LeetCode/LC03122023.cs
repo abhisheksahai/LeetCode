@@ -97,13 +97,15 @@
 
         public static int ReverseNumber(int num)
         {
+            bool isNegative = (num < 0);
+            num = Math.Abs(num);
             int result = 0;
             while (num >= 1)
             {
                 result = result * 10 + num % 10;
                 num /= 10;
             }
-            return result;
+            return result * (isNegative ? -1 : 1);
         }
     }
 }
