@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public static class LC03122023
+    public class LC03122023
     {
         public static int[] ElementsValueEqualToIndex(int[] nums)
         {
