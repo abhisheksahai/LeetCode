@@ -99,5 +99,29 @@
             }
             return result;
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/jewels-and-stones/
+        /// </summary>
+        /// <param name="jewels"></param>
+        /// <param name="stones"></param>
+        /// <returns></returns>
+        public static int NumJewelsInStones(string jewels, string stones)
+        {
+            int res = 0;
+            HashSet<char> chars = new HashSet<char>();
+            for (int i = 0; i < jewels.Length; i++)
+            {
+                chars.Add(jewels[i]);
+            }
+            for (int i = 0; i < stones.Length; i++)
+            {
+                if (chars.Contains(stones[i]))
+                {
+                    res++;
+                }
+            }
+            return res;
+        }
     }
 }

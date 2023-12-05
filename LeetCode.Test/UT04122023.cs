@@ -32,5 +32,11 @@
         {
             var result = LC04122023.RunningSum([1, 2, 3, 4]);
         }
+
+        [Test]
+        public void NumJewelsInStonesTest()
+        {
+            var result = LC04122023.NumJewelsInStones("aA", "aAAbbbb");
+        }
     }
 }
