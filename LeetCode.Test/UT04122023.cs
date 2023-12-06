@@ -38,5 +38,12 @@
         {
             var result = LC04122023.NumJewelsInStones("aA", "aAAbbbb");
         }
+
+        [Test]
+        public void MinimumAbsDifference()
+        {
+            var result1 = LC04122023.MinimumAbsDifferenceWithSort([40, 11, 26, 27, -20]);
+            var result2 = LC04122023.MinimumAbsDifference([4, 2, 1, 3]);
+        }
     }
 }

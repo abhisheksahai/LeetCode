@@ -123,5 +123,76 @@
             }
             return res;
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-absolute-difference/
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static IList<IList<int>> MinimumAbsDifference(int[] arr)
+        {
+            IList<IList<int>> result = new List<IList<int>>();
+            int mindiff = int.MaxValue;
+            int len = arr.Length;
+            for (int i = 0; i < len; i++)
+            {
+                for (int j = i + 1; j < len; j++)
+                {
+                    int diff = Math.Abs(arr[j] - arr[i]);
+                    if (diff < mindiff)
+                    {
+                        result.Clear();
+                        mindiff = diff;
+                        if (arr[i] > arr[j])
+                        {
+                            result.Add(new int[] { arr[j], arr[i] });
+                        }
+                        else
+                        {
+                            result.Add(new int[] { arr[i], arr[j] });
+                        }
+                    }
+                    else if (diff == mindiff)
+                    {
+                        if (arr[i] > arr[j])
+                        {
+                            result.Add(new int[] { arr[j], arr[i] });
+                        }
+                        else
+                        {
+                            result.Add(new int[] { arr[i], arr[j] });
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+        public static IList<IList<int>> MinimumAbsDifferenceWithSort(int[] arr)
+        {
+            IList<IList<int>> result = new List<IList<int>>();
+            if (arr.Length == 0 || arr.Length == 1)
+            {
+                return result;
+            }
+            Array.Sort(arr);
+            int minDiff = Math.Abs((arr[0] - arr[1]));
+            result.Add(new int[] { arr[0], arr[1] });
+            for (int i = 1; i < arr.Length - 1; i++)
+            {
+                int diff = Math.Abs((arr[i] - arr[i + 1]));
+                if (diff < minDiff)
+                {
+                    minDiff = diff;
+                    result.Clear();
+                    result.Add(new int[] { arr[i], arr[i + 1] });
+                }
+                else if (diff == minDiff)
+                {
+                    result.Add(new int[] { arr[i], arr[i + 1] });
+                }
+            }
+            return result;
+        }
     }
 }
