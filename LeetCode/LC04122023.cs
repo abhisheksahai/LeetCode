@@ -194,5 +194,46 @@
             }
             return result;
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/three-consecutive-odds
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static bool ThreeConsecutiveOdds(int[] arr)
+        {
+            if (arr.Length < 3)
+            {
+                return false;
+            }
+            for (int i = 0; i < arr.Length - 2; i++)
+            {
+                if (arr[i] % 2 != 0 && arr[i + 1] % 2 != 0 && arr[i + 2] % 2 != 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/move-zeroes/
+        /// </summary>
+        /// <param name="nums"></param>
+        public static void MoveZeroes(int[] nums)
+        {
+            int k = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] != 0)
+                {
+                    nums[k++] = nums[i];
+                }
+            }
+            while (k < nums.Length)
+            {
+                nums[k] = 0;
+            }
+        }
     }
 }

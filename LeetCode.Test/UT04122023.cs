@@ -40,10 +40,22 @@
         }
 
         [Test]
-        public void MinimumAbsDifference()
+        public void MinimumAbsDifferenceTest()
         {
             var result1 = LC04122023.MinimumAbsDifferenceWithSort([40, 11, 26, 27, -20]);
             var result2 = LC04122023.MinimumAbsDifference([4, 2, 1, 3]);
+        }
+
+        [Test]
+        public void ThreeConsecutiveOddsTest()
+        {
+            var result = LC04122023.ThreeConsecutiveOdds([2, 6, 4, 1]);
+        }
+
+        [Test]
+        public void MoveZeroesTest()
+        {
+            LC04122023.MoveZeroes([0, 1, 0, 3, 12]);
         }
     }
 }
