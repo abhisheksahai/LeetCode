@@ -56,5 +56,11 @@
         {
             int result = LC09122023.SumOfElement([1, 2, 6, 3, 5]);
         }
+
+        [Test]
+        public void FirstEvenNumberTest()
+        {
+            int result = LC09122023.FirstEvenNumber([1, 2, 6, 3, 5]);
+        }
     }
 }

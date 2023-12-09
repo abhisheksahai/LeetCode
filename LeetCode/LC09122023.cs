@@ -121,5 +121,17 @@
             }
             return result;
         }
+
+        public static int FirstEvenNumber(int[] nums)
+        {
+            foreach (var item in nums)
+            {
+                if (item % 2 == 0)
+                {
+                    return item;
+                }
+            }
+            return -1;
+        }
     }
 }
