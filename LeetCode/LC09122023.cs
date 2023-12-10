@@ -133,5 +133,33 @@
             }
             return -1;
         }
+
+        public static int Reverse(int x)
+        {
+            if (x <= int.MinValue)
+            {
+                return 0;
+            }
+            bool isNegative = x < 0;
+            double result = 0;
+            x = Math.Abs(x);
+            while (x > 9)
+            {
+                result = result * 10 + x % 10;
+                x = x / 10;
+            }
+            result = result * 10 + x;
+            if (result > int.MaxValue)
+            {
+                return 0;
+            }
+            if (isNegative)
+            {
+                result *= -1;
+            }
+            return Convert.ToInt32(result);
+        }
+
+
     }
 }

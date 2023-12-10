@@ -62,5 +62,11 @@
         {
             int result = LC09122023.FirstEvenNumber([1, 2, 6, 3, 5]);
         }
+
+        [Test]
+        public void ReverseTest()
+        {
+            var result = LC09122023.Reverse(-2147483648);
+        }
     }
 }
