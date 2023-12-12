@@ -68,5 +68,11 @@
         {
             var result = LC09122023.Reverse(-2147483648);
         }
+
+        [Test]
+        public void IsValidTest()
+        {
+            var result = LC09122023.IsValid("()[]{}");
+        }
     }
 }

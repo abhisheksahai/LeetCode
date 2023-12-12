@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using System.Linq;
+
+namespace LeetCode
 {
     public class LC09122023
     {
@@ -160,6 +162,37 @@
             return Convert.ToInt32(result);
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/valid-parentheses/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static bool IsValid(string s)
+        {
+            Dictionary<char, char> dict = new()
+            {
+                { '{','}' },
+                { '(',')' },
+                { '[',']' }
+            };
+            Stack<char> stack = new();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (dict.ContainsKey(s[i]))
+                {
+                    stack.Push(s[i]);
+                }
+                else if (stack.Count > 0 && dict[stack.Peek()] == s[i])
+                {
+                    stack.Pop();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return stack.Count == 0;
+        }
 
     }
 }
