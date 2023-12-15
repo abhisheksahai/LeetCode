@@ -38,5 +38,60 @@
             }
             return [.. result];
         }
+
+        public static int LongestPalindrome(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return 0;
+            if (s.Length == 1)
+                return 1;
+            int result = 0;
+            HashSet<char> chars = new();
+            foreach (char ch in s)
+            {
+                if (chars.Contains(ch))
+                {
+                    chars.Remove(ch);
+                    result += 2;
+                }
+                else
+                {
+                    chars.Add(ch);
+                }
+            }
+            result = chars.Count() != 0 ? result + 1 : result;
+            return result;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/
+        /// </summary>
+        /// <param name="words"></param>
+        /// <returns></returns>
+        public static int LongestPalindromeConcatTwoLetters(string[] words)
+        {
+            bool identical = false;
+            int result = 0;
+            HashSet<string> strList = new();
+            foreach (var item in words)
+            {
+                var rev = new string(item.Reverse().ToArray());
+                if (!identical & item == rev)
+                {
+                    result += 2;
+                    identical = true;
+                }
+                else if (strList.Contains(rev))
+                {
+                    strList.Remove(item);
+                    result += 4;
+                }
+                else
+                {
+                    strList.Add(item);
+                }
+            }
+            return result;
+        }
     }
 }
