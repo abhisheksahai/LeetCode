@@ -28,6 +28,34 @@ namespace LeetCode
         }
 
 
+        //Two pointer with sorted array. TC= O(n * log n) and SC = O(1)
+        public static bool TwoSumTwoPointer(int[] nums, int target)
+        {
+            int len = nums.Length;
+            Array.Sort(nums);
+            int left = 0, right = len - 1;
+            while (left < right)
+            {
+                int leftVal = nums[left];
+                int rightVal = nums[right];
+                if (leftVal + rightVal == target)
+                {
+                    return true;
+                }
+
+                if (leftVal + rightVal > target)
+                {
+                    right--;
+                }
+                else
+                {
+                    left++;
+                }
+            }
+            return false;
+        }
+
+
         /// TC = O(n^2), SC=O(1)
         public static int[] TwoSumWithTwoLoops(int[] nums, int target)
         {

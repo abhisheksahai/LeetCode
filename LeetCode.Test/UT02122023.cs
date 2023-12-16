@@ -14,6 +14,12 @@ namespace LeetCode.Test
         }
 
         [Test]
+        public void TwoSumRetBoolTest()
+        {
+            var resul2 = LC02122023.TwoSumTwoPointer([2, 7, 11, 15], 9);
+        }
+
+        [Test]
         public void AddNumberTest()
         {
             var result = LC02122023.AddNumber(1, 5);
