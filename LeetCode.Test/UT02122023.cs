@@ -5,6 +5,8 @@ namespace LeetCode.Test
         [Test]
         public void TwoSumTest()
         {
+            var resul2 = LC02122023.TwoSum([3, 3], 6);
+            var result1 = LC02122023.TwoSumWithTwoLoops([2, 7, 11, 15], 9);
             var result = LC02122023.TwoSum([2, 7, 11, 15], 9);
             Assert.That(result, Is.Not.Null);
             result = LC02122023.TwoSum([1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1], 11);

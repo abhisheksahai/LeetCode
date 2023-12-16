@@ -21,9 +21,9 @@
         }
 
         [Test]
-        public void LongestPalindromeConcatTwoLettersTest()
+        public void Test()
         {
-            var result = LC12122023.LongestPalindromeConcatTwoLetters(["cc", "ll", "xx"]);
+            var result = LC12122023.Test();
         }
     }
 }

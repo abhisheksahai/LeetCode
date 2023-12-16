@@ -6,6 +6,7 @@ namespace LeetCode
     {
         /// <summary>
         /// https://leetcode.com/problems/two-sum/description/
+        /// TC = O(n), SC=O(n)
         /// </summary>
         /// <param name="nums"></param>
         /// <param name="target"></param>
@@ -22,6 +23,25 @@ namespace LeetCode
                     return [value, i];
                 }
                 map.TryAdd(nums[i], i);
+            }
+            return null;
+        }
+
+
+        /// TC = O(n^2), SC=O(1)
+        public static int[] TwoSumWithTwoLoops(int[] nums, int target)
+        {
+            int len = nums.Length;
+            for (int i = 0; i < len; i++)
+            {
+                int diff = target - nums[i];
+                for (int j = i + 1; j < len; j++)
+                {
+                    if (diff == nums[j])
+                    {
+                        return [i, j];
+                    }
+                }
             }
             return null;
         }
