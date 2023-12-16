@@ -42,7 +42,6 @@ namespace LeetCode
                 {
                     return true;
                 }
-
                 if (leftVal + rightVal > target)
                 {
                     right--;

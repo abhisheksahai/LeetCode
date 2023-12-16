@@ -63,10 +63,34 @@
             return result;
         }
 
-        public static int Test()
+        /// <summary>
+        /// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+        /// TC = O(n) and SC = O(1)
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static int[] TwoSum(int[] numbers, int target)
         {
-            int result = 0;
-            return result;
+            int startIndex = 0;
+            int endIndex = numbers.Length - 1;
+            while (startIndex < endIndex)
+            {
+                int sum = numbers[startIndex] + numbers[endIndex];
+                if (sum == target)
+                {
+                    return new int[] { startIndex + 1, endIndex + 1 };
+                }
+                else if (sum > target)
+                {
+                    endIndex--;
+                }
+                else
+                {
+                    startIndex++;
+                }
+            }
+            throw new Exception("No integer pair exists");
         }
     }
 }
