@@ -3,3 +3,7 @@ https://www.geeksforgeeks.org/c-sharp-dictionary-with-examples/
 In interview first do with brute force O(n*N), using inbuild sorting o(n * log n) and finally o(n)
 
 Glassdoor and BlindApp (Register with current company) In blind app real interview questions were mentioned
+
+Pascal triangle: (Utilize the properties of binomial coefficients to calculate each element in the k-th row directly.)
+long currentElement = prev * (rowIndex - i + 1) / i;
+
