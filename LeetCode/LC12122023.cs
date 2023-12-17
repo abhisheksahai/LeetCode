@@ -92,5 +92,36 @@
             }
             throw new Exception("No integer pair exists");
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/majority-element/description/
+        /// TC=O(n) and SC=O(n) because of dictinary
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int MajorityElement(int[] nums)
+        {
+            if (nums.Length == 1)
+            {
+                return nums[0];
+            }
+            Dictionary<int, int> keyValuePairs = new();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(nums[i])) 
+                {
+                    keyValuePairs[nums[i]]++;
+                    if (keyValuePairs[nums[i]] > nums.Length / 2)
+                    {
+                        return nums[i];
+                    }
+                }
+                else
+                {
+                    keyValuePairs.Add(nums[i], 1);
+                }
+            }
+            return int.MinValue;
+        }
     }
 }

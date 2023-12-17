@@ -25,5 +25,11 @@
         {
             var result = LC12122023.TwoSum([2, 7, 11, 15], 9);
         }
+
+        [Test]
+        public void MajorityElementTest()
+        {
+            var result = LC12122023.MajorityElement([2, 2, 1, 1, 1, 2, 2]);
+        }
     }
 }
