@@ -95,7 +95,7 @@
 
         /// <summary>
         /// https://leetcode.com/problems/majority-element/description/
-        /// TC=O(n) and SC=O(n) because of dictinary
+        /// TC=O(n) and SC=O(n) because of Dictionary
         /// </summary>
         /// <param name="nums"></param>
         /// <returns></returns>
@@ -108,7 +108,7 @@
             Dictionary<int, int> keyValuePairs = new();
             for (int i = 0; i < nums.Length; i++)
             {
-                if (keyValuePairs.ContainsKey(nums[i])) 
+                if (keyValuePairs.ContainsKey(nums[i]))
                 {
                     keyValuePairs[nums[i]]++;
                     if (keyValuePairs[nums[i]] > nums.Length / 2)
@@ -122,6 +122,37 @@
                 }
             }
             return int.MinValue;
+        }
+
+
+        //Moore Voting Algorithm. This algorithm is applicable to this problem only.
+        //Majority = first element and count =1, loop from second element to end. if current element = majority element increment the count else decrement the count.When count reaches 0, change the majority to current elemnet and set count to 1
+        //TC=O(n) and SC=O(1)
+        public static int MajorityElementOptimised(int[] nums)
+        {
+            if (nums.Length == 1)
+            {
+                return nums[0];
+            }
+            int majority = nums[0];
+            int count = 1;
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] == majority)
+                {
+                    count++;
+                }
+                else
+                {
+                    count--;
+                    if (count == 0)
+                    {
+                        majority = nums[i];
+                        count = 1;
+                    }
+                }
+            }
+            return majority;
         }
     }
 }

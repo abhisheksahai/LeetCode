@@ -29,7 +29,8 @@
         [Test]
         public void MajorityElementTest()
         {
-            var result = LC12122023.MajorityElement([2, 2, 1, 1, 1, 2, 2]);
+            var result1 = LC12122023.MajorityElementOptimised([2, 2, 1, 1, 1, 2, 2]);
+            var result2 = LC12122023.MajorityElement([2, 2, 1, 1, 1, 2, 2]);
         }
     }
 }
