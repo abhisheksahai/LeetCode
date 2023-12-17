@@ -18,27 +18,6 @@
             return x == z;
         }
 
-        public static int[] Intersection(int[] nums1, int[] nums2)
-        {
-            HashSet<int> result = new();
-            HashSet<int> elements = new();
-            for (int i = 0; i < nums1.Length; i++)
-            {
-                if (!elements.Contains(nums1[i]))
-                {
-                    elements.Add(nums1[i]);
-                }
-            }
-            for (int i = 0; i < nums2.Length; i++)
-            {
-                if (elements.Contains(nums2[i]) && !result.Contains(nums2[i]))
-                {
-                    result.Add(nums2[i]);
-                }
-            }
-            return [.. result];
-        }
-
         public static int LongestPalindrome(string s)
         {
             if (string.IsNullOrEmpty(s))
@@ -154,5 +133,59 @@
             }
             return majority;
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/intersection-of-two-arrays/
+        /// TC=O(n) and Sc=O(n)
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        public static int[] Intersection(int[] nums1, int[] nums2)
+        {
+            HashSet<int> result = new();
+            HashSet<int> elements = new();
+            for (int i = 0; i < nums1.Length; i++)
+            {
+                if (!elements.Contains(nums1[i]))
+                {
+                    elements.Add(nums1[i]);
+                }
+            }
+            for (int i = 0; i < nums2.Length; i++)
+            {
+                if (elements.Contains(nums2[i]) && !result.Contains(nums2[i]))
+                {
+                    result.Add(nums2[i]);
+                }
+            }
+            return [.. result];
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/.
+        /// Very Important. Was aksed in VM Ware and Nagarro
+        /// TC = O(N) and SC = O(1)
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
+        public static int MaxProfit(int[] prices)
+        {
+            int maxProfit = 0;
+            int minPrice = prices[0];
+            for (int i = 1; i < prices.Length; i++)
+            {
+                if (prices[i] < minPrice)
+                {
+                    minPrice = prices[i];
+                }
+                else if ((prices[i] - minPrice) > maxProfit)
+                {
+                    maxProfit = prices[i] - minPrice;
+                }
+            }
+            return maxProfit;
+        }
+
     }
 }
