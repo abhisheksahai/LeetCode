@@ -187,5 +187,39 @@
             return maxProfit;
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/rotate-array/
+        /// TC=O(N) and SC=O(N)
+        /// Assignment
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        public static int[] Rotate(int[] nums, int k)
+        {
+            int len = nums.Length;
+            if (k >= len)
+            {
+                k %= len;
+            }
+            if (k == 0 || len == 1)
+            {
+                return nums;
+            }
+            int[] result = new int[len];
+            int index = len - k;
+            result[0] = nums[index];
+            for (int i = 1; i < len; i++)
+            {
+                index++;
+                if (index == len)
+                {
+                    index = 0;
+                }
+                result[i] = nums[index];
+            }
+            Array.Copy(result, nums, len);
+            return result;
+        }
+
     }
 }

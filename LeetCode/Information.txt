@@ -1,3 +1,5 @@
 https://www.geeksforgeeks.org/c-sharp-dictionary-with-examples/
 
 In interview first do with brute force O(n*N), using inbuild sorting o(n * log n) and finally o(n)
+
+Glassdoor and BlindApp (Register with current company) In blind app real interview questions were mentioned

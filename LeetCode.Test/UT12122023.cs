@@ -40,5 +40,11 @@
             var result2 = LC12122023.MaxProfit([7, 6, 4, 3, 1]);
         }
 
+        [Test]
+        public void RotateTest()
+        {
+            var result = LC12122023.Rotate([1, 2, 3, 4, 5, 6, 7], 3);
+        }
+
     }
 }
