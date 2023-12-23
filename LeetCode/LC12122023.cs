@@ -108,7 +108,6 @@
             return int.MinValue;
         }
 
-
         //Moore Voting Algorithm. This algorithm is applicable to this problem only.
         //Majority = first element and count =1, loop from second element to end. if current element = majority element increment the count else decrement the count.When count reaches 0, change the majority to current elemnet and set count to 1
         //TC=O(n) and SC=O(1)
