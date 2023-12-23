@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using System.Collections.Generic;
+
+namespace LeetCode
 {
     public class LC23122023
     {
@@ -33,7 +35,6 @@
             }
             return -1;
         }
-
 
         /// <summary>
         /// https://leetcode.com/problems/valid-anagram/description/
@@ -81,5 +82,39 @@
             return chars.Count == 0;
         }
 
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+        /// Using sliding window. initally i = j =0. both will move from L->R. i will increment when char is added to hasset and j will be incremented when we remove character from hashset
+        /// TC=O(N) and SC=O(N)
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static int LengthOfLongestSubstring(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+            {
+                return 0;
+            }
+            int n = s.Length;
+            int i = 0, j = 0, max = 0;
+            HashSet<char> hSet = new();
+            while (i < n)
+            {
+                if (!hSet.Contains(s[i]))
+                {
+                    hSet.Add(s[i]);
+                    i++;
+                }
+                else
+                {
+                    max = Math.Max(max, hSet.Count);
+                    hSet.Remove(s[j]);
+                    j++;
+                }
+                max = Math.Max(max, hSet.Count);
+            }
+            return max;
+        }
     }
 }

@@ -18,6 +18,11 @@
             return x == z;
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/longest-palindrome/description/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static int LongestPalindrome(string s)
         {
             if (string.IsNullOrEmpty(s))
