@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public class LC12172023
+    public class LC17122023
     {
         /// <summary>
         /// https://leetcode.com/problems/pascals-triangle-ii/description/
