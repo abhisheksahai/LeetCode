@@ -14,7 +14,7 @@ namespace LeetCode.Y2023
         public static int[] TwoSum(int[] nums, int target)
         {
             int len = nums.Length;
-            Dictionary<int, int> map = [];
+            Dictionary<int, int> map = new();
             for (int i = 0; i < len; i++)
             {
                 int diff = target - nums[i];
