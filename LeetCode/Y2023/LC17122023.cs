@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Y2023
 {
     public class LC17122023
     {
@@ -130,6 +130,5 @@
             }
             return result;
         }
-
     }
 }

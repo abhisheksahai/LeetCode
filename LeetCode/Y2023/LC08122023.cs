@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Y2023
 {
     public class LC08122023
     {
@@ -35,7 +35,7 @@
 
         public static bool IsLeap(int year)
         {
-            if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+            if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0)
             {
                 return true;
             }

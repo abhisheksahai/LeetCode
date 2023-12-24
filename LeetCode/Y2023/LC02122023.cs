@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace LeetCode
+namespace LeetCode.Y2023
 {
     public class LC02122023
     {
@@ -27,7 +27,6 @@ namespace LeetCode
             return null;
         }
 
-
         //Two pointer with sorted array. TC= O(n * log n) and SC = O(1)
         public static bool TwoSumTwoPointer(int[] nums, int target)
         {
@@ -53,7 +52,6 @@ namespace LeetCode
             }
             return false;
         }
-
 
         /// TC = O(n^2), SC=O(1)
         public static int[] TwoSumWithTwoLoops(int[] nums, int target)
@@ -162,6 +160,5 @@ namespace LeetCode
             }
             Console.WriteLine($"First max {first}, second max {second} and third max {third}");
         }
-
     }
 }

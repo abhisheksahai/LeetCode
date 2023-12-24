@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Y2023
 {
     public class LC03122023
     {
@@ -97,7 +97,7 @@
 
         public static int ReverseNumber(int num)
         {
-            bool isNegative = (num < 0);
+            bool isNegative = num < 0;
             num = Math.Abs(num);
             int result = 0;
             while (num >= 1)

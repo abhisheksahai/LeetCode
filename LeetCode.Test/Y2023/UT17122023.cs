@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Test
+﻿using LeetCode.Y2023;
+
+namespace LeetCode.Test.Y2023
 {
     public class UT17122023
     {

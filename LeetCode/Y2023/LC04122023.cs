@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Y2023
 {
     public class LC04122023
     {
@@ -176,11 +176,11 @@
                 return result;
             }
             Array.Sort(arr);
-            int minDiff = Math.Abs((arr[0] - arr[1]));
+            int minDiff = Math.Abs(arr[0] - arr[1]);
             result.Add(new int[] { arr[0], arr[1] });
             for (int i = 1; i < arr.Length - 1; i++)
             {
-                int diff = Math.Abs((arr[i] - arr[i + 1]));
+                int diff = Math.Abs(arr[i] - arr[i + 1]);
                 if (diff < minDiff)
                 {
                     minDiff = diff;

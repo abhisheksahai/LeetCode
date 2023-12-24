@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace LeetCode
+namespace LeetCode.Y2023
 {
     public class LC09122023
     {
@@ -193,6 +193,5 @@ namespace LeetCode
             }
             return stack.Count == 0;
         }
-
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Y2023
 {
     public class LC12122023
     {
@@ -184,7 +184,7 @@
                 {
                     minPrice = prices[i];
                 }
-                else if ((prices[i] - minPrice) > maxProfit)
+                else if (prices[i] - minPrice > maxProfit)
                 {
                     maxProfit = prices[i] - minPrice;
                 }
