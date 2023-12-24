@@ -27,5 +27,23 @@
         {
             var result = LC23122023.LongestPalindrome("dccaccd");
         }
+
+        [Test]
+        public void RotateTest()
+        {
+            var result = LC23122023.Rotate([1, 2, 3, 4, 5, 6, 7], 3);
+        }
+
+        [Test]
+        public void convertToWaveTest()
+        {
+            LC23122023.convertToWave(5, [1, 2, 3, 4, 5]);
+        }
+
+        [Test]
+        public void MergeTest()
+        {
+            var result = LC23122023.Merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+        }
     }
 }
