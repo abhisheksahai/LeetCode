@@ -20,6 +20,7 @@
 
         /// <summary>
         /// https://leetcode.com/problems/longest-palindrome/description/
+        /// TC=O(N) and SC=O(1)
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>

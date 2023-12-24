@@ -21,5 +21,11 @@
             var result2 = LC23122023.LengthOfLongestSubstring("au");
             var result1 = LC23122023.LengthOfLongestSubstring("pwwkew");
         }
+
+        [Test]
+        public void LongestPalindromeTest()
+        {
+            var result = LC23122023.LongestPalindrome("dccaccd");
+        }
     }
 }

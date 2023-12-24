@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCode
 {
@@ -115,6 +116,52 @@ namespace LeetCode
                 max = Math.Max(max, hSet.Count);
             }
             return max;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-palindrome/description/
+        /// (n-1)a+(m-1)b+1 => Formula to take odd characters
+        /// TC=O(N) and SC=O(1). SC=O(1) because as input contains upper and lower case letters only so maximum it will have 26+26 keys in the dictionary.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static int LongestPalindrome(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return 0;
+            if (s.Length == 1)
+                return 1;
+            int result = 0;
+            Dictionary<char, int> frequency = new();
+            foreach (char ch in s)
+            {
+                if (frequency.ContainsKey(ch))
+                {
+                    frequency[ch]++;
+                }
+                else
+                {
+                    frequency[ch] = 1;
+                }
+            }
+            bool oddFrequeny = false;
+            foreach (var kv in frequency)
+            {
+                if (kv.Value % 2 == 0)
+                {
+                    result += kv.Value;
+                }
+                else
+                {
+                    oddFrequeny = true;
+                    result += kv.Value - 1;
+                }
+            }
+            if (oddFrequeny)
+            {
+                result++;
+            }
+            return result;
         }
     }
 }
