@@ -25,5 +25,11 @@ namespace LeetCode.Test.Y2023
             var result2 = LC24122023.FourSum([2, 2, 2, 2, 2], 8);
             var result3 = LC24122023.FourSum([1, 0, -1, 0, -2, 2], 0);
         }
+
+        [Test]
+        public void RotateTest()
+        {
+            LC24122023.Rotate([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+        }
     }
 }

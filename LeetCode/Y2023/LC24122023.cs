@@ -169,5 +169,31 @@
             }
             return result;
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/rotate-image/
+        /// To rotate a matrix by 90, transpose the matrix and reverse each row.
+        /// TC=O(N^2) And SC=O(1)
+        /// </summary>
+        /// <param name="matrix"></param>
+        public static void Rotate(int[][] matrix)
+        {
+            if (matrix == null || matrix.Length == 0 || matrix.Length != matrix[0].Length)
+            {
+                return;
+            }
+            int len = matrix.Length;
+            for (int i = 0; i < len; i++)
+            {
+                for (int j = i + 1; j < len; j++)
+                {
+                    (matrix[i][j], matrix[j][i]) = (matrix[j][i], matrix[i][j]);
+                }
+            }
+            for (int i = 0; i < len; i++)
+            {
+                Array.Reverse(matrix[i]);
+            }
+        }
     }
 }
