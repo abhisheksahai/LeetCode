@@ -1,13 +1,7 @@
-﻿using System.Linq;
-
-namespace LeetCode.Y2023
+﻿namespace LeetCode.Y2023
 {
     public class LC02122023
     {
-       
-
-       
-
         public static int AddNumber(int start, int end)
         {
             int sum = 0;

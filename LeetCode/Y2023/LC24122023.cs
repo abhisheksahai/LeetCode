@@ -70,6 +70,36 @@
         }
 
         /// <summary>
+        /// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+        /// TC = O(n) and SC = O(1)
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static int[] TwoSumArraySorted(int[] numbers, int target)
+        {
+            int startIndex = 0;
+            int endIndex = numbers.Length - 1;
+            while (startIndex < endIndex)
+            {
+                int sum = numbers[startIndex] + numbers[endIndex];
+                if (sum == target)
+                {
+                    return new int[] { startIndex + 1, endIndex + 1 };
+                }
+                else if (sum > target)
+                {
+                    endIndex--;
+                }
+                else
+                {
+                    startIndex++;
+                }
+            }
+            throw new Exception("No integer pair exists");
+        }
+
+        /// <summary>
         /// https://leetcode.com/problems/3sum/description/
         /// </summary>
         /// <param name="nums"></param>
