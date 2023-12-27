@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Y2023
 {
+    /// <summary>
+    /// array-assignment-part-1
+    /// </summary>
     public class LC24122023
     {
         /// <summary>
@@ -311,7 +314,6 @@
             }
             return result.ToArray();
         }
-
 
         /// <summary>
         /// https://leetcode.com/problems/majority-element-ii/description/
