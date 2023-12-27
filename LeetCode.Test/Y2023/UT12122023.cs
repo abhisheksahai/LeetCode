@@ -15,7 +15,7 @@ namespace LeetCode.Test.Y2023
         {
             var result = LC12122023.LongestPalindrome("civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth");
         }
-        
+
         [Test]
         public void MajorityElementTest()
         {
@@ -30,17 +30,9 @@ namespace LeetCode.Test.Y2023
         }
 
         [Test]
-        public void MaxProfitTest()
-        {
-            var result1 = LC12122023.MaxProfit([7, 1, 5, 3, 6, 4]);
-            var result2 = LC12122023.MaxProfit([7, 6, 4, 3, 1]);
-        }
-
-        [Test]
         public void RotateTest()
         {
             var result = LC12122023.Rotate([1, 2, 3, 4, 5, 6, 7], 3);
         }
-
     }
 }

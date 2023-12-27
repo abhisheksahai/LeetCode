@@ -31,29 +31,7 @@
             }
             return true;
         }
-
-        /// <summary>
-        /// https://leetcode.com/problems/pascals-triangle/
-        /// </summary>
-        /// <param name="numRows"></param>
-        /// <returns></returns>
-        public static IList<IList<int>> GeneratePascalTraingle(int numRows)
-        {
-            IList<IList<int>> result = [];
-            for (int i = 0; i < numRows; i++)
-            {
-                int[] row = new int[i + 1];
-                row[0] = 1;
-                row[i] = 1;
-                for (int j = 1; j < i; j++)
-                {
-                    row[j] = result[i - 1][j] + result[i - 1][j - 1];
-                }
-                result.Add(row);
-            }
-            return result;
-        }
-
+        
         /// <summary>
         ///  https://leetcode.com/problems/richest-customer-wealth
         /// </summary>

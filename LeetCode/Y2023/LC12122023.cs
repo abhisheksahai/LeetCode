@@ -136,32 +136,7 @@
             }
             return [.. result];
         }
-
-        /// <summary>
-        /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/.
-        /// Very Important. Was aksed in VM Ware and Nagarro
-        /// TC = O(N) and SC = O(1)
-        /// </summary>
-        /// <param name="prices"></param>
-        /// <returns></returns>
-        public static int MaxProfit(int[] prices)
-        {
-            int maxProfit = 0;
-            int minPrice = prices[0];
-            for (int i = 1; i < prices.Length; i++)
-            {
-                if (prices[i] < minPrice)
-                {
-                    minPrice = prices[i];
-                }
-                else if (prices[i] - minPrice > maxProfit)
-                {
-                    maxProfit = prices[i] - minPrice;
-                }
-            }
-            return maxProfit;
-        }
-
+       
         /// <summary>
         /// https://leetcode.com/problems/rotate-array/
         /// TC=O(N) and SC=O(N)
@@ -195,6 +170,5 @@
             Array.Copy(result, nums, len);
             return result;
         }
-
     }
 }

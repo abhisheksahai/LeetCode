@@ -15,13 +15,7 @@ namespace LeetCode.Test.Y2023
         public void IsPrimeTest()
         {
             bool result = LC04122023.IsPrime(23);
-        }
-
-        [Test]
-        public void GeneratePascalTraingleTest()
-        {
-            var result = LC04122023.GeneratePascalTraingle(5);
-        }
+        }      
 
         [Test]
         public void MaximumWealthTest()

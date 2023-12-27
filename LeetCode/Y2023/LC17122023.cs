@@ -2,42 +2,6 @@
 {
     public class LC17122023
     {
-        /// <summary>
-        /// https://leetcode.com/problems/pascals-triangle-ii/description/
-        /// TC=O(N) and SC=O(rowIndex)
-        /// </summary>
-        /// <param name="rowIndex"></param>
-        /// <returns></returns>
-        public static IList<int> GetRow(int rowIndex)
-        {
-            IList<int> rows = new List<int> { 1 };
-            long prev = 1;
-            for (int i = 1; i <= rowIndex; i++)
-            {
-                long currentElement = prev * (rowIndex - i + 1) / i;
-                prev = currentElement;
-                rows.Add((int)currentElement);
-            }
-            return rows;
-        }
-
-        /// <summary>
-        /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
-        /// TC = O(N) and SC=O(1)
-        /// </summary>
-        /// <param name="prices"></param>
-        /// <returns></returns>
-        public static int MaxProfit(int[] prices)
-        {
-            int totalProfit = 0;
-            for (int i = 1; i < prices.Length; i++)
-            {
-                if (prices[i] > prices[i - 1])
-                    totalProfit += prices[i] - prices[i - 1];
-            }
-            return totalProfit;
-        }
-
         public static IList<int> MajorityElement(int[] nums)
         {
             if (nums.Length == 1)

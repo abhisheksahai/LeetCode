@@ -35,6 +35,32 @@ namespace LeetCode.Test.Y2023
         }
 
         [Test]
+        public void GeneratePascalTraingleTest()
+        {
+            var result = LC24122023.GeneratePascalTraingle(5);
+        }
+
+        [Test]
+        public void GetRowTest()
+        {
+            var result = LC24122023.GetRow(3);
+        }
+
+        [Test]
+        public void MaxProfitTest()
+        {
+            var result1 = LC24122023.MaxProfit([7, 1, 5, 3, 6, 4]);
+            var result2 = LC24122023.MaxProfit([7, 6, 4, 3, 1]);
+        }
+
+        [Test]
+        public void MaxProfit2Test()
+        {
+            var result1 = LC24122023.MaxProfit2([7, 1, 5, 3, 2, 10]);
+            var result2 = LC24122023.MaxProfit2([7, 1, 5, 3, 6, 4]);
+        }
+
+        [Test]
         public void ThreeSumTest()
         {
             var res1 = LC24122023.ThreeSum([-1, 0, 1, 2, -1, -4]);

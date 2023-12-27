@@ -135,6 +135,89 @@
         }
 
         /// <summary>
+        /// https://leetcode.com/problems/pascals-triangle/
+        /// </summary>
+        /// <param name="numRows"></param>
+        /// <returns></returns>
+        public static IList<IList<int>> GeneratePascalTraingle(int numRows)
+        {
+            IList<IList<int>> result = [];
+            for (int i = 0; i < numRows; i++)
+            {
+                int[] row = new int[i + 1];
+                row[0] = 1;
+                row[i] = 1;
+                for (int j = 1; j < i; j++)
+                {
+                    row[j] = result[i - 1][j] + result[i - 1][j - 1];
+                }
+                result.Add(row);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/pascals-triangle-ii/description/
+        /// TC=O(N) and SC=O(rowIndex)
+        /// </summary>
+        /// <param name="rowIndex"></param>
+        /// <returns></returns>
+        public static IList<int> GetRow(int rowIndex)
+        {
+            IList<int> rows = new List<int> { 1 };
+            long prev = 1;
+            for (int i = 1; i <= rowIndex; i++)
+            {
+                long currentElement = prev * (rowIndex - i + 1) / i;
+                prev = currentElement;
+                rows.Add((int)currentElement);
+            }
+            return rows;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/.
+        /// Very Important. Was aksed in VM Ware and Nagarro
+        /// TC = O(N) and SC = O(1)
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
+        public static int MaxProfit(int[] prices)
+        {
+            int maxProfit = 0;
+            int minPrice = prices[0];
+            for (int i = 1; i < prices.Length; i++)
+            {
+                if (prices[i] < minPrice)
+                {
+                    minPrice = prices[i];
+                }
+                else if (prices[i] - minPrice > maxProfit)
+                {
+                    maxProfit = prices[i] - minPrice;
+                }
+            }
+            return maxProfit;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+        /// TC = O(N) and SC=O(1)
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
+        public static int MaxProfit2(int[] prices)
+        {
+            int totalProfit = 0;
+            for (int i = 1; i < prices.Length; i++)
+            {
+                if (prices[i] > prices[i - 1])
+                    totalProfit += prices[i] - prices[i - 1];
+            }
+            return totalProfit;
+        }
+
+        /// <summary>
         /// https://leetcode.com/problems/3sum/description/
         /// </summary>
         /// <param name="nums"></param>
