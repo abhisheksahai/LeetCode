@@ -5,6 +5,23 @@ namespace LeetCode.Test.Y2023
     public class UT24122023
     {
         [Test]
+        public void TwoSumTest()
+        {
+            var resul2 = LC24122023.TwoSum([3, 3], 6);
+            var result1 = LC24122023.TwoSumWithTwoLoops([2, 7, 11, 15], 9);
+            var result = LC24122023.TwoSum([2, 7, 11, 15], 9);
+            Assert.That(result, Is.Not.Null);
+            result = LC24122023.TwoSum([1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1], 11);
+            Assert.That(result, Is.Not.Null);
+        }
+
+        [Test]
+        public void TwoSumRetBoolTest()
+        {
+            var resul2 = LC24122023.TwoSumTwoPointer([2, 7, 11, 15], 9);
+        }
+
+        [Test]
         public void ThreeSumTest()
         {
             var res1 = LC24122023.ThreeSum([-1, 0, 1, 2, -1, -4]);

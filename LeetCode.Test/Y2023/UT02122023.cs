@@ -3,24 +3,7 @@ using LeetCode.Y2023;
 namespace LeetCode.Test.Y2023
 {
     public class UT02122023
-    {
-        [Test]
-        public void TwoSumTest()
-        {
-            var resul2 = LC02122023.TwoSum([3, 3], 6);
-            var result1 = LC02122023.TwoSumWithTwoLoops([2, 7, 11, 15], 9);
-            var result = LC02122023.TwoSum([2, 7, 11, 15], 9);
-            Assert.That(result, Is.Not.Null);
-            result = LC02122023.TwoSum([1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1], 11);
-            Assert.That(result, Is.Not.Null);
-        }
-
-        [Test]
-        public void TwoSumRetBoolTest()
-        {
-            var resul2 = LC02122023.TwoSumTwoPointer([2, 7, 11, 15], 9);
-        }
-
+    {              
         [Test]
         public void AddNumberTest()
         {

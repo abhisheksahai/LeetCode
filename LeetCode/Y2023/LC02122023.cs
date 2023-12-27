@@ -4,72 +4,9 @@ namespace LeetCode.Y2023
 {
     public class LC02122023
     {
-        /// <summary>
-        /// https://leetcode.com/problems/two-sum/description/
-        /// TC = O(n), SC=O(n)
-        /// </summary>
-        /// <param name="nums"></param>
-        /// <param name="target"></param>
-        /// <returns></returns>
-        public static int[] TwoSum(int[] nums, int target)
-        {
-            int len = nums.Length;
-            Dictionary<int, int> map = new();
-            for (int i = 0; i < len; i++)
-            {
-                int diff = target - nums[i];
-                if (map.TryGetValue(diff, out int value))
-                {
-                    return [value, i];
-                }
-                map.TryAdd(nums[i], i);
-            }
-            return null;
-        }
+       
 
-        //Two pointer with sorted array. TC= O(n * log n) and SC = O(1)
-        public static bool TwoSumTwoPointer(int[] nums, int target)
-        {
-            int len = nums.Length;
-            Array.Sort(nums);
-            int left = 0, right = len - 1;
-            while (left < right)
-            {
-                int leftVal = nums[left];
-                int rightVal = nums[right];
-                if (leftVal + rightVal == target)
-                {
-                    return true;
-                }
-                if (leftVal + rightVal > target)
-                {
-                    right--;
-                }
-                else
-                {
-                    left++;
-                }
-            }
-            return false;
-        }
-
-        /// TC = O(n^2), SC=O(1)
-        public static int[] TwoSumWithTwoLoops(int[] nums, int target)
-        {
-            int len = nums.Length;
-            for (int i = 0; i < len; i++)
-            {
-                int diff = target - nums[i];
-                for (int j = i + 1; j < len; j++)
-                {
-                    if (diff == nums[j])
-                    {
-                        return [i, j];
-                    }
-                }
-            }
-            return null;
-        }
+       
 
         public static int AddNumber(int start, int end)
         {
