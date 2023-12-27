@@ -16,15 +16,22 @@ namespace LeetCode.Test.Y2023
         }
 
         [Test]
+        public void TwoSumRetBoolTest()
+        {
+            var resul2 = LC24122023.TwoSumTwoPointer([2, 7, 11, 15], 9);
+        }
+
+        [Test]
         public void TwoSumArraySortedTest()
         {
             var result = LC24122023.TwoSumArraySorted([2, 7, 11, 15], 9);
         }
 
         [Test]
-        public void TwoSumRetBoolTest()
+        public void MergeTwoSortedArrayTest()
         {
-            var resul2 = LC24122023.TwoSumTwoPointer([2, 7, 11, 15], 9);
+            var result1 = LC24122023.Merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+            var result2 = LC24122023.Merge([1], 1, [], 0);
         }
 
         [Test]

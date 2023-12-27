@@ -100,6 +100,41 @@
         }
 
         /// <summary>
+        /// https://leetcode.com/problems/merge-sorted-array/
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="m"></param>
+        /// <param name="nums2"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int[] Merge(int[] nums1, int m, int[] nums2, int n)
+        {
+            int i = 0, j = 0, k = 0;
+            int[] nums3 = new int[m + n];
+            while (i < m && j < n)
+            {
+                if (nums1[i] < nums2[j])
+                {
+                    nums3[k++] = nums1[i++];
+                }
+                else
+                {
+                    nums3[k++] = nums2[j++];
+                }
+            }
+            while (i < m)
+            {
+                nums3[k++] = nums1[i++];
+            }
+            while (j < n)
+            {
+                nums3[k++] = nums2[j++];
+            }
+            Array.Copy(nums3, nums1, m + n);
+            return nums1;
+        }
+
+        /// <summary>
         /// https://leetcode.com/problems/3sum/description/
         /// </summary>
         /// <param name="nums"></param>
