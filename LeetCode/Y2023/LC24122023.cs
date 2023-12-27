@@ -218,6 +218,161 @@
         }
 
         /// <summary>
+        /// https://leetcode.com/problems/majority-element/description/
+        /// TC=O(n) and SC=O(n) because of Dictionary
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int MajorityElement(int[] nums)
+        {
+            if (nums.Length == 1)
+            {
+                return nums[0];
+            }
+            Dictionary<int, int> keyValuePairs = new();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(nums[i]))
+                {
+                    keyValuePairs[nums[i]]++;
+                    if (keyValuePairs[nums[i]] > nums.Length / 2)
+                    {
+                        return nums[i];
+                    }
+                }
+                else
+                {
+                    keyValuePairs.Add(nums[i], 1);
+                }
+            }
+            return int.MinValue;
+        }
+
+        //Moore Voting Algorithm. This algorithm is applicable to this problem only.
+        //Majority = first element and count =1, loop from second element to end. if current element = majority element increment the count else decrement the count.When count reaches 0, change the majority to current elemnet and set count to 1
+        //TC=O(n) and SC=O(1)
+        public static int MajorityElementOptimised(int[] nums)
+        {
+            if (nums.Length == 1)
+            {
+                return nums[0];
+            }
+            int majority = nums[0];
+            int count = 1;
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] == majority)
+                {
+                    count++;
+                }
+                else
+                {
+                    count--;
+                    if (count == 0)
+                    {
+                        majority = nums[i];
+                        count = 1;
+                    }
+                }
+            }
+            return majority;
+        }
+
+        public static IList<int> MajorityElement2(int[] nums)
+        {
+            if (nums.Length == 1)
+            {
+                return nums;
+            }
+            else if (nums.Length == 2)
+            {
+                if (nums[0] == nums[1])
+                {
+                    return new int[] { nums[0] };
+                };
+                return nums;
+            }
+            HashSet<int> result = new();
+            Dictionary<int, int> map = new();
+            foreach (int num in nums)
+            {
+                if (map.ContainsKey(num))
+                {
+                    map[num]++;
+                    if (map[num] > nums.Length / 3 && !result.Contains(num))
+                    {
+                        result.Add(num);
+                    }
+                }
+                else
+                {
+                    map.Add(num, 1);
+                }
+            }
+            return result.ToArray();
+        }
+
+
+        /// <summary>
+        /// https://leetcode.com/problems/majority-element-ii/description/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static IList<int> MajorityElementMooreVoting(int[] nums)
+        {
+            if (nums.Length == 1)
+            {
+                return nums;
+            }
+            else if (nums.Length == 2)
+            {
+                if (nums[0] == nums[1])
+                {
+                    return new int[] { nums[0] };
+                };
+                return nums;
+            }
+
+            int? firstMajorityElement = null, secondMajorityElement = null, firstMajorityCount = 0, secondMajorityCount = 0;
+            foreach (int num in nums)
+            {
+                if (firstMajorityElement.HasValue && num == firstMajorityElement)
+                {
+                    firstMajorityCount++;
+                }
+                else if (secondMajorityElement.HasValue && num == secondMajorityElement)
+                {
+                    secondMajorityCount++;
+                }
+                else if (firstMajorityCount == 0)
+                {
+                    firstMajorityElement = num;
+                    firstMajorityCount = 1;
+                }
+                else if (secondMajorityCount == 0)
+                {
+                    secondMajorityElement = num;
+                    secondMajorityCount = 1;
+                }
+                else
+                {
+                    firstMajorityCount--;
+                    secondMajorityCount--;
+                }
+            }
+            IList<int> result = new List<int>();
+            if (nums.Count(n => n == firstMajorityElement) > nums.Length / 3)
+            {
+                result.Add(firstMajorityElement.Value);
+            }
+            if (nums.Count(n => n == secondMajorityElement) > nums.Length / 3)
+            {
+                result.Add(secondMajorityElement.Value);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// https://leetcode.com/problems/3sum/description/
         /// </summary>
         /// <param name="nums"></param>

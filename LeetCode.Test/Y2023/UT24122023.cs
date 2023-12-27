@@ -61,6 +61,20 @@ namespace LeetCode.Test.Y2023
         }
 
         [Test]
+        public void MajorityElementTest()
+        {
+            var result1 = LC24122023.MajorityElementOptimised([2, 2, 1, 1, 1, 2, 2]);
+            var result2 = LC24122023.MajorityElement([2, 2, 1, 1, 1, 2, 2]);
+        }
+
+        [Test]
+        public void MajorityElement2Test()
+        {
+            var result1 = LC24122023.MajorityElementMooreVoting([2, 2, 1, 3]);
+            var result2 = LC24122023.MajorityElement2([3, 2, 3]);
+        }
+
+        [Test]
         public void ThreeSumTest()
         {
             var res1 = LC24122023.ThreeSum([-1, 0, 1, 2, -1, -4]);
