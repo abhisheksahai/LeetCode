@@ -2,6 +2,11 @@
 {
     public class LC24122023
     {
+        /// <summary>
+        /// https://leetcode.com/problems/3sum/description/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
         public static IList<IList<int>> ThreeSum(int[] nums)
         {
             IList<IList<int>> res = new List<IList<int>>();
@@ -59,6 +64,50 @@
                 }
             }
             return res;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/3sum-closest/description/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static int ThreeSumClosest(int[] nums, int target)
+        {
+            int len = nums.Length;
+            if (len == 3)
+            {
+                return nums[0] + nums[1] + nums[2];
+            }
+            int diff = int.MaxValue;
+            Array.Sort(nums);
+            for (int i = 0; i < len - 2; i++)
+            {
+                int low = i + 1;
+                int high = len - 1;
+                while (low < high)
+                {
+                    int sum = nums[i] + nums[low] + nums[high];
+                    int diffNew = Math.Abs(sum - target);
+                    if (diffNew < Math.Abs(diff))
+                    {
+                        diff = sum - target;
+                    }
+                    if (sum < target)
+                    {
+                        low++;
+                    }
+                    else if (sum > target)
+                    {
+                        high--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            return target + diff;
         }
     }
 }
