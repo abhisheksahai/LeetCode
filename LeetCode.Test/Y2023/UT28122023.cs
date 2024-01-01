@@ -19,7 +19,16 @@ namespace LeetCode.Test.Y2023
         [Test]
         public void ContainsNearbyDuplicateTest()
         {
-            var result = LC28122023.ContainsNearbyDuplicate([1, 2, 3, 1], 3);
+            var result1 = LC28122023.ContainsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2);
+            var result2 = LC28122023.ContainsNearbyDuplicate([1, 2, 3, 1], 3);
+            var result3 = LC28122023.ContainsNearbyDuplicate([1, 0, 1, 1], 1);
+        }
+
+        [Test]
+        public void SummaryRangesTest()
+        {
+            var result1 = LC28122023.SummaryRanges([0, 1, 2, 4, 5, 7]);
+            var result2 = LC28122023.SummaryRanges([0, 2, 3, 4, 6, 8, 9]);
         }
     }
 }
