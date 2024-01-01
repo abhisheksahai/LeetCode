@@ -75,6 +75,7 @@
 
         /// <summary>
         /// https://leetcode.com/problems/summary-ranges/
+        /// TC=O(N) and SC=O(N)
         /// </summary>
         /// <param name="nums"></param>
         /// <returns></returns>
@@ -115,5 +116,28 @@
             }
             return result;
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/range-sum-query-immutable/
+        /// </summary>
+        public class NumArray
+        {
+            private int[] numsArr;
+            public NumArray(int[] nums)
+            {
+                numsArr = nums;
+            }
+            public int SumRange(int left, int right)
+            {
+                long result = 0;
+                while (left <= right)
+                {
+                    result += numsArr[left];
+                    left++;
+                }
+                return (int)result;
+            }
+        }
+
     }
 }
