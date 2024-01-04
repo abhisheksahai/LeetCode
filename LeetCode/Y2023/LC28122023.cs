@@ -119,25 +119,74 @@
 
         /// <summary>
         /// https://leetcode.com/problems/range-sum-query-immutable/
+        /// Tc=O(N) and SC=O(1)
         /// </summary>
         public class NumArray
         {
             private int[] numsArr;
             public NumArray(int[] nums)
             {
+                for (int i = 1; i < nums.Length; i++)
+                {
+                    nums[i] += nums[i - 1];
+                }
                 numsArr = nums;
             }
             public int SumRange(int left, int right)
             {
-                long result = 0;
-                while (left <= right)
+                if (left == 0)
                 {
-                    result += numsArr[left];
-                    left++;
+                    return numsArr[right];
                 }
-                return (int)result;
+                return numsArr[right] - numsArr[left - 1];
             }
         }
+
+
+        /// <summary>
+        /// https://leetcode.com/problems/range-sum-query-2d-immutable/
+        /// https://www.youtube.com/watch?v=KE8MQuwE2yA
+        /// </summary>
+        public class NumMatrix
+        {
+            int[][] numMat;
+            public NumMatrix(int[][] matrix)
+            {
+                int rows = matrix.Length;
+                int cols = matrix[0].Length;
+                numMat = new int[rows + 1][];
+                for (int i = 0; i <= rows; i++)
+                {
+                    numMat[i] = new int[cols + 1];
+                }
+                for (int r = 0; r < rows; r++)
+                {
+                    int prefix = 0;
+                    for (int c = 0; c < cols; c++)
+                    {
+                        prefix += matrix[r][c];
+                        int above = numMat[r][c + 1];
+                        numMat[r + 1][c + 1] = prefix + above;
+                    }
+                }
+            }
+
+            public int SumRegion(int row1, int col1, int row2, int col2)
+            {
+                long sum = 0;
+                row1++;
+                col1++;
+                row2++;
+                col2++;
+                int bottomRight = numMat[row2][col2];
+                int above = numMat[row1 - 1][col2];
+                int left = numMat[row2][col1 - 1];
+                int topLeft = numMat[row1 - 1][col1 - 1];
+                sum = bottomRight - above - left + topLeft;
+                return (int)sum;
+            }
+        }
+
 
     }
 }

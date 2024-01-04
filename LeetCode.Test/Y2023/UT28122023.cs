@@ -38,5 +38,12 @@ namespace LeetCode.Test.Y2023
             NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
             var result = numArray.SumRange(0, 2);
         }
+
+        [Test]
+        public void NumMatrixTest()
+        {
+            NumMatrix matrix = new NumMatrix([[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]]);
+            var result = matrix.SumRegion(2, 1, 4, 3);
+        }
     }
 }
