@@ -142,7 +142,6 @@
             }
         }
 
-
         /// <summary>
         /// https://leetcode.com/problems/range-sum-query-2d-immutable/
         /// https://www.youtube.com/watch?v=KE8MQuwE2yA
@@ -196,14 +195,71 @@
         public static int RemoveElement(int[] nums, int val)
         {
             if (nums == null || nums.Length == 0) return 0;
-            int result = 0;
+            int length = nums.Length;
             int k = 0;
-            while (k < nums.Length)
+            for (int i = 0; i < length; i++)
             {
-
+                if (nums[i] != val)
+                {
+                    nums[k++] = nums[i];
+                }
             }
+            return k;
+        }
 
-            return result;
+        /// <summary>
+        /// https://leetcode.com/problems/intersection-of-two-arrays/
+        /// TC=O(n) and Sc=O(n)
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        public static int[] Intersection(int[] nums1, int[] nums2)
+        {
+            HashSet<int> result = new();
+            HashSet<int> elements = new();
+            for (int i = 0; i < nums1.Length; i++)
+            {
+                if (!elements.Contains(nums1[i]))
+                {
+                    elements.Add(nums1[i]);
+                }
+            }
+            for (int i = 0; i < nums2.Length; i++)
+            {
+                if (elements.Contains(nums2[i]) && !result.Contains(nums2[i]))
+                {
+                    result.Add(nums2[i]);
+                }
+            }
+            return result.ToArray();
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/intersection-of-two-arrays-ii/
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        public static int[] Intersect(int[] nums1, int[] nums2)
+        {
+            List<int> result = new();
+            HashSet<int> elements = new();
+            for (int i = 0; i < nums1.Length; i++)
+            {
+                if (!elements.Contains(nums1[i]))
+                {
+                    elements.Add(nums1[i]);
+                }
+            }
+            for (int i = 0; i < nums2.Length; i++)
+            {
+                if (elements.Contains(nums2[i]) && !result.Contains(nums2[i]))
+                {
+                    result.Add(nums2[i]);
+                }
+            }
+            return result.ToArray();
         }
     }
 }

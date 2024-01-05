@@ -51,5 +51,11 @@ namespace LeetCode.Test.Y2023
         {
             var result = LC28122023.RemoveElement([0, 1, 2, 2, 3, 0, 4, 2], 2);
         }
+
+        [Test]
+        public void IntersectionTest()
+        {
+            var result = LC28122023.Intersection([1, 2, 2, 1], [2, 2]);
+        }
     }
 }
