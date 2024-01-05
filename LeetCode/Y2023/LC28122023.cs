@@ -187,6 +187,23 @@
             }
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/remove-element/description/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static int RemoveElement(int[] nums, int val)
+        {
+            if (nums == null || nums.Length == 0) return 0;
+            int result = 0;
+            int k = 0;
+            while (k < nums.Length)
+            {
 
+            }
+
+            return result;
+        }
     }
 }
