@@ -288,6 +288,13 @@
             return result.ToArray();
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/intersection-of-two-arrays-ii/
+        /// TC=O(N) and SC=O(N)
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
         public static int[] IntersectOptimised(int[] nums1, int[] nums2)
         {
             List<int> result = new();
@@ -317,6 +324,7 @@
             }
             return result.ToArray();
         }
+
         public static int NextGreaterElement(int n)
         {
             int result = 0;
