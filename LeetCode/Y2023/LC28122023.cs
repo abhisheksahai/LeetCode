@@ -288,6 +288,35 @@
             return result.ToArray();
         }
 
+        public static int[] IntersectOptimised(int[] nums1, int[] nums2)
+        {
+            List<int> result = new();
+            Dictionary<int, int> kv = new();
+            foreach (int i in nums1)
+            {
+                if (kv.ContainsKey(i))
+                {
+                    kv[i]++;
+                }
+                else
+                {
+                    kv.Add(i, 1);
+                }
+            }
+            foreach (int j in nums2)
+            {
+                if (kv.ContainsKey(j))
+                {
+                    result.Add(j);
+                    kv[j]--;
+                    if (kv[j] == 0)
+                    {
+                        kv.Remove(j);
+                    }
+                }
+            }
+            return result.ToArray();
+        }
         public static int NextGreaterElement(int n)
         {
             int result = 0;
