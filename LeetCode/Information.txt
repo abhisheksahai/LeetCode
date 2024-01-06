@@ -7,3 +7,13 @@ Glassdoor and BlindApp (Register with current company) In blind app real intervi
 Pascal triangle: (Utilize the properties of binomial coefficients to calculate each element in the k-th row directly.)
 long currentElement = prev * (rowIndex - i + 1) / i;
 
+
+Example 1: Apple US
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+
+Example 2:
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0
+
+Solve with brute force and try with two pointer in O(N) as well
