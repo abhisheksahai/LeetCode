@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Y2023
 {
+    /// <summary>
+    /// Array assignment part 2
+    /// </summary>
     public class LC28122023
     {
         /// <summary>
@@ -237,6 +240,7 @@
 
         /// <summary>
         /// https://leetcode.com/problems/intersection-of-two-arrays-ii/
+        /// TC=O(N^2) and SC=O(N)
         /// </summary>
         /// <param name="nums1"></param>
         /// <param name="nums2"></param>
@@ -244,22 +248,51 @@
         public static int[] Intersect(int[] nums1, int[] nums2)
         {
             List<int> result = new();
-            HashSet<int> elements = new();
-            for (int i = 0; i < nums1.Length; i++)
+            Dictionary<int, int> kv1 = new();
+            Dictionary<int, int> kv2 = new();
+            foreach (int i in nums1)
             {
-                if (!elements.Contains(nums1[i]))
+                if (kv1.ContainsKey(i))
                 {
-                    elements.Add(nums1[i]);
+                    kv1[i]++;
+                }
+                else
+                {
+                    kv1.Add(i, 1);
                 }
             }
-            for (int i = 0; i < nums2.Length; i++)
+            foreach (int j in nums2)
             {
-                if (elements.Contains(nums2[i]) && !result.Contains(nums2[i]))
+                if (kv2.ContainsKey(j))
                 {
-                    result.Add(nums2[i]);
+                    kv2[j]++;
+                }
+                else
+                {
+                    kv2.Add(j, 1);
+                }
+            }
+            foreach (var item in kv1)
+            {
+                int count = 0;
+                kv2.TryGetValue(item.Key, out count);
+                if (count > 0)
+                {
+                    count = Math.Min(count, item.Value);
+                    for (int i = 0; i < count; i++)
+                    {
+                        result.Add(item.Key);
+                    }
                 }
             }
             return result.ToArray();
+        }
+
+        public static int NextGreaterElement(int n)
+        {
+            int result = 0;
+
+            return result;
         }
     }
 }
