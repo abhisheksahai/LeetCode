@@ -7,7 +7,9 @@ namespace LeetCode.Test.Y2024
         [Test]
         public void MergeOptimisedTest()
         {
-            var result = LC06012024.MergeOptimised([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+            LC06012024.Merge([2, 0], 1, [1], 1);
+            LC06012024.Merge([0], 0, [1], 1);
+            LC06012024.Merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
         }
 
         [Test]

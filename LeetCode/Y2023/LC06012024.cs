@@ -6,20 +6,31 @@
         /// https://leetcode.com/problems/merge-sorted-array/
         /// TC=O(N) and SC=O(1)
         /// </summary>
-        /// <param name="nums1"></param>
-        /// <param name="m"></param>
+        /// <param name="nums1"></param> 
         /// <param name="nums2"></param>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static int[] MergeOptimised(int[] nums1, int m, int[] nums2, int n)
+        public static void Merge(int[] nums1, int m, int[] nums2, int n)
         {
             int p1 = m - 1;
             int p2 = n - 1;
-            for (int p = n + m - 1; p < 0; p--)
+            for (int p = n + m - 1; p >= 0; p--)
             {
-
+                if (p2 < 0)
+                {
+                    break;
+                }
+                if (p1 >= 0 && nums1[p1] > nums2[p2])
+                {
+                    nums1[p] = nums1[p1];
+                    p1--;
+                }
+                else
+                {
+                    nums1[p] = nums2[p2];
+                    p2--;
+                }
             }
-            return nums1;
         }
 
         /// <summary>
