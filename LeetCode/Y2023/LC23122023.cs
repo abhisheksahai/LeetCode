@@ -208,6 +208,7 @@ namespace LeetCode.Y2023
 
         /// <summary>
         /// https://leetcode.com/problems/merge-sorted-array/
+        /// TC=O(N) and SC=O(1)
         /// </summary>
         /// <param name="nums1"></param>
         /// <param name="m"></param>
@@ -239,6 +240,6 @@ namespace LeetCode.Y2023
             }
             Array.Copy(nums3, nums1, m + n);
             return nums1;
-        }
+        }       
     }
 }
