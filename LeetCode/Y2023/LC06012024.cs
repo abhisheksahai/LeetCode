@@ -84,13 +84,15 @@
 
         /// <summary>
         /// https://leetcode.com/problems/merge-intervals/
-        /// Salesforce, MS
+        /// Salesforce,MS,Amazon
         /// </summary>
         /// <param name="intervals"></param>
         /// <returns></returns>
         public static int[][] Merge(int[][] intervals)
         {
-            return intervals;
+            List<int[]> result = new();
+            intervals = intervals.OrderBy(x => x[0]).ToArray();
+            return result.ToArray();
         }
     }
 }
