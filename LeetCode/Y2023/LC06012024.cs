@@ -95,5 +95,41 @@
             result.Add(intervals[0]);
             return result.ToArray();
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/product-of-array-except-self
+        /// Approach : for index i the value will product of its left element * product of its right element
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int[] ProductExceptSelf(int[] nums)
+        {
+            int len = nums.Length;
+            int[] res = new int[len];
+            res[0] = 1;
+            for (int i = 1; i < len; i++)
+            {
+                res[i] = res[i - 1] * nums[i - 1];
+            }
+            int right = 1;
+            for (int i = len - 1; i >= 0; i--)
+            {
+                res[i] *= right;
+                right *= nums[i];
+            }
+            return res;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/trapping-rain-water/
+        /// </summary>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static int Trap(int[] height)
+        {
+            int result = 0;
+
+            return result;
+        }
     }
 }

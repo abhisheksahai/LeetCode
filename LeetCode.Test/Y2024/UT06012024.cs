@@ -25,5 +25,17 @@ namespace LeetCode.Test.Y2024
             var result = LC06012024.Merge([[1, 3], [2, 6], [8, 10], [15, 18]]);
         }
 
+        [Test]
+        public void ProductExceptSelfTest()
+        {
+            var result = LC06012024.ProductExceptSelf([1, 2, 3, 4]);
+        }
+
+        [Test]
+        public void TrapTest()
+        {
+            var result = LC06012024.Trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]);
+        }
+
     }
 }
