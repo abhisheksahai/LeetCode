@@ -18,5 +18,12 @@ namespace LeetCode.Test.Y2024
             var result1 = LC06012024.MaxAreaTwoPointer([1, 8, 6, 2, 5, 4, 8, 3, 7]);
             var result2 = LC06012024.MaxAreaBruteForce([1, 8, 6, 2, 5, 4, 8, 3, 7]);
         }
+
+        [Test]
+        public void MergeTest()
+        {
+            var result = LC06012024.Merge([[1, 3], [2, 6], [8, 10], [15, 18]]);
+        }
+
     }
 }

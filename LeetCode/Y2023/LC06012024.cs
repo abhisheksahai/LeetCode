@@ -92,6 +92,7 @@
         {
             List<int[]> result = new();
             intervals = intervals.OrderBy(x => x[0]).ToArray();
+            result.Add(intervals[0]);
             return result.ToArray();
         }
     }
