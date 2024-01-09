@@ -151,7 +151,6 @@
             int[] rightMax = new int[len];
             leftMax[0] = height[0];
             
-
             for (int i = 1; i < len; i++)
             {
                 leftMax[i] = Math.Max(leftMax[i - 1], height[i]);

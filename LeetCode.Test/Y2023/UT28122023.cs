@@ -63,5 +63,12 @@ namespace LeetCode.Test.Y2023
         {
             var result = LC28122023.Intersect([4, 9, 5], [9, 4, 9, 8, 4]);
         }
+
+        [Test]
+        public void NextGreaterElementTest()
+        {
+            var resul1 = LC28122023.NextGreaterElement([1, 3, 5, 2, 4], [6, 5, 4, 3, 2, 1, 7]);
+            var resul2 = LC28122023.NextGreaterElement([4, 1, 2], [1, 3, 4, 2]);
+        }
     }
 }

@@ -325,11 +325,41 @@
             return result.ToArray();
         }
 
-        public static int NextGreaterElement(int n)
+        /// <summary>
+        /// https://leetcode.com/problems/next-greater-element-i
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        public static int[] NextGreaterElement(int[] nums1, int[] nums2)
         {
-            int result = 0;
-
+            Stack<int> stack = [];
+            Dictionary<int, int> dict = [];
+            for (int i = 0; i < nums2.Length; ++i)
+            {
+                int numNow = nums2[i];
+                while (stack.Count > 0 && stack.Peek() < numNow)
+                {
+                    dict.Add(stack.Peek(), numNow);
+                    stack.Pop();
+                }
+                stack.Push(numNow);
+            }
+            int[] result = new int[nums1.Length];
+            for (int i = 0; i < nums1.Length; i++)
+            {
+                int numNow = nums1[i];
+                if (dict.TryGetValue(numNow, out int value))
+                {
+                    result[i] = value;
+                }
+                else
+                {
+                    result[i] = -1;
+                }
+            }
             return result;
         }
+
     }
 }
