@@ -25,6 +25,7 @@
                     if (kv.Count == k)
                     {
                         i++;
+
                     }
                     else
                     {
@@ -37,6 +38,42 @@
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/maximum-subarray/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public int MaxSubArray(int[] nums)
+        {
+            return 0;
+        }
+
+
+        /// <summary>
+        /// https://leetcode.com/problems/sliding-window-maximum/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static int[] MaxSlidingWindow(int[] nums, int k)
+        {
+            int len = nums.Length;
+            int i = 0, j = i + k - 1;
+            List<int> result = [];
+            while (j <= len - 1)
+            {
+                int max = Int32.MinValue;
+                for (int t = i; t <= j; t++)
+                {
+                    max = Math.Max(max, nums[t]);
+                }
+                result.Add(max);
+                i++;
+                j++;
+            }
+            return result.ToArray();
         }
     }
 }
