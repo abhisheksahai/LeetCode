@@ -1,4 +1,4 @@
-﻿using LeetCode.Y2023;
+﻿using LeetCode.Y2024;
 
 namespace LeetCode.Test.Y2024
 {
