@@ -17,3 +17,5 @@ Input: nums = [-1,1,0,-3,3]
 Output: [0,0,9,0,0
 
 Solve with brute force and try with two pointer in O(N) as well
+
+https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/tutorial/
