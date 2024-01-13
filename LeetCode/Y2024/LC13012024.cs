@@ -75,5 +75,21 @@
             }
             return result.ToArray();
         }
+
+        public static int[] MaxSlidingWindowOptimised(int[] nums, int k)
+        {
+            int len = nums.Length;
+            int i = 0, j = 0, temp = nums[0];
+            List<int> result = [];
+            while (j <= len - 1)
+            {
+                temp=Math.Max(temp, nums[j]);
+                i++;
+                j++;
+            }
+            return result.ToArray();
+        }
+
+
     }
 }
