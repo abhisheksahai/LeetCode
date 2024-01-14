@@ -48,9 +48,23 @@
         /// </summary>
         /// <param name="nums"></param>
         /// <returns></returns>
-        public int MaxSubArray(int[] nums)
+        public static int MaxSubArray(int[] nums)
         {
-            return 0;
+            int sum = 0;
+            int maxSum = nums[0];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i];
+                if (nums[i] > sum)
+                {
+                    sum = nums[i];
+                }
+                if (sum > maxSum)
+                {
+                    maxSum = sum;
+                }
+            }
+            return maxSum;
         }
 
         /// <summary>
@@ -91,5 +105,27 @@
             }
             return result.ToArray();
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/missing-number/
+        /// Tc=O(n) and SC=O(1)
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public int MissingNumber(int[] nums)
+        {
+            int xorProduct = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                xorProduct = xorProduct ^ nums[i];
+            }
+            for (int i = 1; i <= nums.Length; i++)
+            {
+                xorProduct = xorProduct ^ i;
+            }
+            return xorProduct;
+        }
+
+
     }
 }

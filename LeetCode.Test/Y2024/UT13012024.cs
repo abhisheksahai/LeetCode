@@ -11,6 +11,12 @@ namespace LeetCode.Test.Y2024
         }
 
         [Test]
+        public void MaxSubArrayTest()
+        {
+            var result = LC13012024.MaxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]);
+        }
+
+        [Test]
         public void MaxSlidingWindowTest()
         {
             var result = LC13012024.MaxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3);
