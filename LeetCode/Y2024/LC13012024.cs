@@ -11,32 +11,35 @@
         /// <returns></returns>
         public static int LongestKSubstr(string s, int k)
         {
-            int i = 0, j = 0;
-            int result = 0;
-            Dictionary<char, int> kv = new Dictionary<char, int>();
-            while (j < s.Length - 1)
+            int j = 0, l = 0, result = -1;
+            Dictionary<char, int> dic = new Dictionary<char, int>();
+            for (int i = 0; i < s.Length; i++)
             {
-                if (kv.ContainsKey(s[j]))
+                char ch = s[i];
+                if (dic.ContainsKey(ch))
                 {
-                    kv[s[j]]++;
+                    dic[ch] = dic[ch] + 1;
                 }
                 else
                 {
-                    if (kv.Count == k)
-                    {
-                        i++;
-
-                    }
-                    else
-                    {
-                        result = Math.Max(result, j - i + 1);
-                        kv.Add(s[j], 1);
-                    }
+                    dic.Add(ch, 1);
                 }
-                j++;
 
+                while (dic.Count > k)
+                {
+                    char remChar = s[l++];
+                    dic[remChar] = dic[remChar] - 1;
+                    if (dic[remChar] == 0)
+                    {
+                        dic.Remove(remChar);
+                    }
+                    j++;
+                }
+                if (dic.Count == k)
+                {
+                    result = Math.Max(result, i - j + 1);
+                }
             }
-
             return result;
         }
 
@@ -49,7 +52,6 @@
         {
             return 0;
         }
-
 
         /// <summary>
         /// https://leetcode.com/problems/sliding-window-maximum/
@@ -83,13 +85,11 @@
             List<int> result = [];
             while (j <= len - 1)
             {
-                temp=Math.Max(temp, nums[j]);
+                temp = Math.Max(temp, nums[j]);
                 i++;
                 j++;
             }
             return result.ToArray();
         }
-
-
     }
 }
