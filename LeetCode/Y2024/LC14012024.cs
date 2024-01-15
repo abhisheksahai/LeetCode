@@ -33,5 +33,14 @@
             }
             return xorProduct;
         }
+
+        public static int LeftShift(int num, int k)
+        {
+            for (int i = 1; i <= k; i++)
+            {
+                num <<= 1;
+            }
+            return num;
+        }
     }
 }

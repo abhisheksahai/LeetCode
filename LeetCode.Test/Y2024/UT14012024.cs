@@ -13,7 +13,13 @@ namespace LeetCode.Test.Y2024
         [Test]
         public void MissingNumberTest()
         {
-            var result = LC14012024.MissingNumber([1,2,0]);
+            var result = LC14012024.MissingNumber([1, 2, 0]);
+        }
+
+        [Test]
+        public void LeftShiftTest()
+        {
+            var result = LC14012024.LeftShift(2, 5);
         }
     }
 }
