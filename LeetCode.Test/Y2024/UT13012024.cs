@@ -19,7 +19,7 @@ namespace LeetCode.Test.Y2024
         [Test]
         public void MaxSlidingWindowTest()
         {
-            var result = LC13012024.MaxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3);
+            var result = LC13012024.MaxSlidingWindowOptimised([1, 3, -1, -3, 5, 3, 6, 7], 3);
         }
     }
 }

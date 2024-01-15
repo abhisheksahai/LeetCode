@@ -24,7 +24,6 @@
                 {
                     dic.Add(ch, 1);
                 }
-
                 while (dic.Count > k)
                 {
                     char remChar = s[l++];
@@ -95,37 +94,37 @@
         public static int[] MaxSlidingWindowOptimised(int[] nums, int k)
         {
             int len = nums.Length;
-            int i = 0, j = 0, temp = nums[0];
-            List<int> result = [];
-            while (j <= len - 1)
+            int i = 0, j = 0;
+            List<int> queue = [];
+            List<int> ans = [];
+            if (k >= len)
             {
-                temp = Math.Max(temp, nums[j]);
-                i++;
-                j++;
+                ans.Add(nums.Max());
+                return [.. ans];
             }
-            return result.ToArray();
+            while (j < len)
+            {
+                while (queue.Count > 0 && queue[^1] < nums[j])
+                {
+                    queue.RemoveAt(queue.Count - 1);
+                }
+                queue.Add(nums[j]);
+                if (j - i + 1 < k)
+                {
+                    j++;
+                }
+                else if (j - i + 1 == k)
+                {
+                    ans.Add(queue[0]);
+                    if (nums[i] == queue[0])
+                    {
+                        queue.RemoveAt(0);
+                    }
+                    i++;
+                    j++;
+                }
+            }
+            return [.. ans];
         }
-
-        /// <summary>
-        /// https://leetcode.com/problems/missing-number/
-        /// Tc=O(n) and SC=O(1)
-        /// </summary>
-        /// <param name="nums"></param>
-        /// <returns></returns>
-        public int MissingNumber(int[] nums)
-        {
-            int xorProduct = 0;
-            for (int i = 0; i < nums.Length; i++)
-            {
-                xorProduct = xorProduct ^ nums[i];
-            }
-            for (int i = 1; i <= nums.Length; i++)
-            {
-                xorProduct = xorProduct ^ i;
-            }
-            return xorProduct;
-        }
-
-
     }
 }
