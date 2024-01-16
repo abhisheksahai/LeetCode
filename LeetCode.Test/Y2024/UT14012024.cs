@@ -29,5 +29,11 @@ namespace LeetCode.Test.Y2024
 			var result2 = LC14012024.IsKBitSetForNumber(10, 2);
 		}
 
+		[Test]
+		public void SetKBitForNumberTest()
+		{
+			var result = LC14012024.SetKBitForNumber(10, 3);
+		}
+
 	}
 }
