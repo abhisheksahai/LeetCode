@@ -21,5 +21,12 @@ namespace LeetCode.Test.Y2024
         {
             var result = LC14012024.LeftShift(2, 5);
         }
+
+        [Test]
+        public void IsKBitSetForNumberTest()
+        {
+            var result1 = LC14012024.IsKBitSetForNumber(10, 3);
+            var result2 = LC14012024.IsKBitSetForNumber(10, 2);
+        }
     }
 }

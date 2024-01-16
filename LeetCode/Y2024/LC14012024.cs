@@ -42,5 +42,16 @@
             }
             return num;
         }
+
+        public static bool IsKBitSetForNumber(int num, int k)
+        {
+            int mask = 1 << (k - 1);
+            int result = num & mask;
+            if (result == 0)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
