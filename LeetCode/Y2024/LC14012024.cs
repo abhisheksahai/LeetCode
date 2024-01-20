@@ -68,5 +68,17 @@
             num = num & mask;
             return num;
         }
-    }
+
+		/// <summary>
+		/// https://leetcode.com/problems/single-number-iii/
+		/// </summary>
+		/// <param name="nums"></param>
+		/// <returns></returns>
+		public static int[] SingleNumber(int[] nums)
+		{
+            int[] result = [];
+
+            return result;
+		}
+	}
 }
