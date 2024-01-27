@@ -41,5 +41,10 @@ namespace LeetCode.Test.Y2024
             var result = LC14012024.ClearKBit(10, 2);
         }
 
+        [Test]
+        public void IsPowerOfTwoTest()
+        {
+            var result = LC14012024.IsPowerOfTwo(32);
+        }
     }
 }
