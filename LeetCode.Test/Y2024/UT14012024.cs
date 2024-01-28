@@ -13,7 +13,7 @@ namespace LeetCode.Test.Y2024
         [Test]
         public void MissingNumberTest()
         {
-            var result = LC14012024.MissingNumber([1, 2, 0]);
+            var result = LC14012024.MissingNumber([3, 0, 1]);
         }
 
         [Test]
@@ -39,6 +39,25 @@ namespace LeetCode.Test.Y2024
         public void ClearKBitTest()
         {
             var result = LC14012024.ClearKBit(10, 2);
+        }
+
+        [Test]
+        public void PositionRightmostSetbitTest()
+        {
+            var result = LC14012024.PositionRightmostSetbit(3);
+        }
+
+        [Test]
+        public void CountNumberOfSetBitsTest()
+        {
+            var result1 = LC14012024.CountNumberOfSetBits(2);
+            var result2 = LC14012024.CountNumberOfSetBits(3);
+        }
+
+        [Test]
+        public void SingleNumberTest()
+        {
+            var result = LC14012024.SingleNumber([2, 2, 1]);
         }
 
         [Test]

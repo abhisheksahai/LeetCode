@@ -69,15 +69,47 @@
             return num;
         }
 
+        public static int PositionRightmostSetbit(int num)
+        {
+            if (num == 0) return 0;
+            int m = 1, position = 1;
+            while ((num & m) == 0)
+            {
+                m = 1 << m;
+                position++;
+            }
+            return position;
+        }
+
+        public static int CountNumberOfSetBits(int num)
+        {
+            if (num == 0) return 0;
+            int count = 0;
+            while (num > 0)
+            {
+                int p = num & 1;
+                if (p != 0)
+                {
+                    count++;
+                }
+                num = num >> 1;
+            }
+            return count;
+        }
+
+
         /// <summary>
         /// https://leetcode.com/problems/single-number-iii/
         /// </summary>
         /// <param name="nums"></param>
         /// <returns></returns>
-        public static int[] SingleNumber(int[] nums)
+        public static int SingleNumber(int[] nums)
         {
-            int[] result = [];
-
+            int result = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                result = result ^ nums[i];
+            }
             return result;
         }
 
