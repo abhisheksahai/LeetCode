@@ -4,15 +4,24 @@
     {
         /// <summary>
         /// https://leetcode.com/problems/delete-node-in-a-linked-list/
+        /// Tc=O(1) and SC=O(1)
         /// </summary>
         /// <param name="node"></param>
-        public static void DeleteNode(ListNode node)
+        public static void DeleteNode(ListNodeDelete node)
         {
-            if (node == null) return;
-            ListNode right = node.next;
-            node.val = right.val;
+            node.val = node.next.val;
             node.next = node.next.next;
-            right.next = null;
+        }
+
+        public ListNodeRemove RemoveNthFromEnd(ListNodeRemove head, int n)
+        {
+            if (head == null || head.next == null) return null;
+            ListNodeRemove start = new ListNodeRemove();
+            start.next = head;
+
+            ListNodeRemove fast = head;
+
+            return head;
         }
     }
 }
