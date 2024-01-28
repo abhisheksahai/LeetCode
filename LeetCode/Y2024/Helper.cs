@@ -17,3 +17,4 @@
             this.next = next;
         }
     }
+}
