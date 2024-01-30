@@ -57,7 +57,7 @@ namespace LeetCode.Test.Y2024
         [Test]
         public void SingleNumberTest()
         {
-            var result = LC14012024.SingleNumber([2, 2, 1]);
+            var result = LC14012024.SingleNumber([1, 2, 1, 3, 2, 5]);
         }
 
         [Test]

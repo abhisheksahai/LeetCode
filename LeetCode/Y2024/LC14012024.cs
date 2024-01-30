@@ -103,12 +103,27 @@
         /// </summary>
         /// <param name="nums"></param>
         /// <returns></returns>
-        public static int SingleNumber(int[] nums)
+        public static int[] SingleNumber(int[] nums)
         {
-            int result = 0;
-            for (int i = 0; i < nums.Length; i++)
+            int[] result = new int[2];
+            int xorOfElements = 0;
+            foreach (int num in nums)
             {
-                result = result ^ nums[i];
+                xorOfElements ^= num;
+            }
+
+            //Find the mask of right most set bit
+            int lowestSetBit = xorOfElements & -xorOfElements;
+            foreach (int num in nums)
+            {
+                if ((lowestSetBit & num) == 0)
+                {
+                    result[0]^=num;
+                }
+                else
+                {
+                    result[1] ^= num;
+                }
             }
             return result;
         }
