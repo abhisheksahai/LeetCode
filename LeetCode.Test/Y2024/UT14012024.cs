@@ -59,11 +59,5 @@ namespace LeetCode.Test.Y2024
         {
             var result = LC14012024.SingleNumber([1, 2, 1, 3, 2, 5]);
         }
-
-        [Test]
-        public void IsPowerOfTwoTest()
-        {
-            var result = LC14012024.IsPowerOfTwo(32);
-        }
     }
 }

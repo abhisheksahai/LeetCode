@@ -118,7 +118,7 @@
             {
                 if ((lowestSetBit & num) == 0)
                 {
-                    result[0]^=num;
+                    result[0] ^= num;
                 }
                 else
                 {
@@ -127,44 +127,5 @@
             }
             return result;
         }
-
-        public static double MyPow(double x, int n)
-        {
-            double result = 0;
-
-            return result;
-        }
-
-
-        /// <summary>
-        /// https://leetcode.com/problems/power-of-two/
-        /// TC=O(logN) and SC=
-        /// </summary>
-        /// <param name="n"></param>
-        /// <returns></returns>
-        public static bool IsPowerOfTwo(int n)
-        {
-            if (n == 0) return false;
-            if (n == 1) return true;
-            if (n % 2 == 0)
-            {
-                return IsPowerOfTwo(n / 2);
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// https://leetcode.com/problems/count-good-numbers/
-        /// </summary>
-        /// <param name="n"></param>
-        /// <returns></returns>
-        public static int CountGoodNumbers(long n)
-        {
-            int result = 0;
-            return result;
-        }
-
-
-
     }
 }
