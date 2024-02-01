@@ -12,6 +12,27 @@ namespace LeetCode.Test.Y2024
         }
 
         [Test]
+        public void RecursivePrintTest()
+        {
+            LC20012024.RecursivePrint(5);
+        }
+
+        [Test]
+        public void RecursivePrintReverseTest()
+        {
+            LC20012024.RecursivePrintReverse(5);
+        }
+
+        [Test]
+        public void FibTest()
+        {
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine(LC20012024.Fib(i));
+            }
+        }
+
+        [Test]
         public void IsPowerOfTwoTest()
         {
             var result = LC20012024.IsPowerOfTwo(32);

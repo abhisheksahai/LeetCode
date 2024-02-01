@@ -46,6 +46,37 @@
             return result;
         }
 
+        public static void RecursivePrint(int num)
+        {
+            if (num <= 0) return;
+            Console.WriteLine(num);
+            RecursivePrint(num - 1);
+        }
+
+        public static void RecursivePrintReverse(int num)
+        {
+            if (num <= 0) return;
+            RecursivePrintReverse(num - 1);
+            Console.WriteLine(num);
+        }
+
+        /// <summary>
+        /// TC=O(2^n)
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static int Fib(int num)
+        {
+            if (num <= 1)
+            {
+                return num;
+            }
+            else
+            {
+                return Fib(num - 1) + Fib(num - 2);
+            }
+        }
+
         public static double MyPow(double x, int n)
         {
             double result = 0;
