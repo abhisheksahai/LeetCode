@@ -77,11 +77,35 @@
             }
         }
 
-        public static double MyPow(double x, int n)
+        /// <summary>
+        /// Tc=O(n) and SC=O(n)
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int Power(int m, int n)
         {
-            double result = 0;
+            if (n == 0) return 1;
+            return m * Power(m, n - 1);
+        }
 
-            return result;
+        /// <summary>
+        /// TC=O(log n)
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int PowerOptimised(int m, int n)
+        {
+            if (n == 0) return 1;
+            if (n % 2 == 0)
+            {
+                return PowerOptimised(m * m, n / 2);
+            }
+            else
+            {
+                return m * PowerOptimised(m * m, (n - 1) / 2);
+            }
         }
 
         /// <summary>
@@ -99,6 +123,33 @@
                 return IsPowerOfTwo(n / 2);
             }
             return false;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/powx-n/
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static double MyPow(double x, int n)
+        {
+            long num = n;
+            if (n == 0) return 1;
+            if (n < 0)
+            {
+                x = 1 / x;
+                num = -num;
+            }
+            if (num % 2 == 0)
+            {
+                num = num / 2;
+                return MyPow(x * x, Convert.ToInt32(num));
+            }
+            else
+            {
+                num = (num-1) / 2;
+                return x * MyPow(x * x, Convert.ToInt32(num));
+            }
         }
 
         /// <summary>

@@ -33,9 +33,27 @@ namespace LeetCode.Test.Y2024
         }
 
         [Test]
+        public void PowerTest()
+        {
+            int result = LC20012024.Power(2, 5);
+        }
+
+        [Test]
+        public void PowerOptimisedTest()
+        {
+            int result = LC20012024.PowerOptimised(2, 5);
+        }
+
+        [Test]
         public void IsPowerOfTwoTest()
         {
             var result = LC20012024.IsPowerOfTwo(32);
+        }
+
+        [Test]
+        public void MyPowTest()
+        {
+            var result = LC20012024.MyPow(2, -2147483648);
         }
     }
 }
