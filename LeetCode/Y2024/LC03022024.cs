@@ -2,16 +2,15 @@
 {
     public class LC03022024
     {
-        public class ListNodeReverseList
+        public class ListNode
         {
             public int val;
-            public ListNodeReverseList next;
-            public ListNodeReverseList(int val = 0, ListNodeReverseList next = null)
+            public ListNode next;
+            public ListNode(int val = 0, ListNode next = null)
             {
                 this.val = val;
                 this.next = next;
             }
-
         }
 
         /// <summary>
@@ -20,13 +19,13 @@
         /// </summary>
         /// <param name="head"></param>
         /// <returns></returns>
-        public ListNodeReverseList ReverseList(ListNodeReverseList head)
+        public static ListNode ReverseList(ListNode head)
         {
             if (head == null || head.next == null)
             {
                 return head;
             }
-            ListNodeReverseList curr, next, prev;
+            ListNode curr, next, prev;
             curr = head;
             prev = null;
             while (curr != null)
@@ -39,16 +38,34 @@
             return prev;
         }
 
-        public class ListNode
+        public static ListNode ReverseListWithStack(ListNode head)
         {
-            public int val;
-            public ListNode next;
-            public ListNode(int val = 0, ListNode next = null)
+            if (head == null || head.next == null)
             {
-                this.val = val;
-                this.next = next;
+                return head;
             }
+            ListNode curr = head;
+            Stack<int> stack = new();
+            while (curr != null)
+            {
+                stack.Push(curr.val);
+                curr = curr.next;
+            }
+            ListNode ans = new();
+            while (stack.Count > 0)
+            {
+                ListNode temp = ans;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                ListNode newNode = new(stack.Pop());
+                temp.next = newNode;
+            }
+            return ans.next;
         }
+
+
 
         /// <summary>
         /// https://leetcode.com/problems/add-two-numbers/
@@ -80,6 +97,53 @@
                 ans = ans.next;
             }
             return head.next;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/add-two-numbers-ii/
+        /// </summary>
+        /// <param name="l1"></param>
+        /// <param name="l2"></param>
+        /// <returns></returns>
+        public static ListNode AddTwoNumbersII(ListNode l1, ListNode l2)
+        {
+            Stack<int> s1 = new();
+            Stack<int> s2 = new();
+            while (l1 != null)
+            {
+                s1.Push(l1.val);
+                l1 = l1.next;
+            }
+
+            while (l2 != null)
+            {
+                s2.Push(l2.val);
+                l2 = l2.next;
+            }
+
+            int sum = 0;
+            ListNode ans = new();
+            while (s1.Count() > 0 || s2.Count() > 0 || sum > 0)
+            {
+                if (s1.Count() > 0)
+                {
+                    sum += s1.Pop();
+                }
+                if (s2.Count() > 0)
+                {
+                    sum += s2.Pop();
+                }
+                ListNode temp = ans;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                ListNode newNode = new(sum % 10);
+                sum = sum / 10;
+                temp.next = newNode;
+            }
+            ans = ReverseList(ans.next);
+            return ans;
         }
     }
 
