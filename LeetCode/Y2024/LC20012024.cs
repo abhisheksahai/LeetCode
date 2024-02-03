@@ -109,23 +109,6 @@
         }
 
         /// <summary>
-        /// https://leetcode.com/problems/power-of-two/
-        /// TC=O(logN) and SC=
-        /// </summary>
-        /// <param name="n"></param>
-        /// <returns></returns>
-        public static bool IsPowerOfTwo(int n)
-        {
-            if (n == 0) return false;
-            if (n == 1) return true;
-            if (n % 2 == 0)
-            {
-                return IsPowerOfTwo(n / 2);
-            }
-            return false;
-        }
-
-        /// <summary>
         /// https://leetcode.com/problems/powx-n/
         /// </summary>
         /// <param name="x"></param>
@@ -147,9 +130,26 @@
             }
             else
             {
-                num = (num-1) / 2;
+                num = (num - 1) / 2;
                 return x * MyPow(x * x, Convert.ToInt32(num));
             }
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/power-of-two/
+        /// TC=O(logN) and SC=
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static bool IsPowerOfTwo(int n)
+        {
+            if (n == 0) return false;
+            if (n == 1) return true;
+            if (n % 2 == 0)
+            {
+                return IsPowerOfTwo(n / 2);
+            }
+            return false;
         }
 
         /// <summary>

@@ -45,15 +45,16 @@ namespace LeetCode.Test.Y2024
         }
 
         [Test]
-        public void IsPowerOfTwoTest()
-        {
-            var result = LC20012024.IsPowerOfTwo(32);
-        }
-
-        [Test]
         public void MyPowTest()
         {
             var result = LC20012024.MyPow(2, -2147483648);
+        }
+
+
+        [Test]
+        public void IsPowerOfTwoTest()
+        {
+            var result = LC20012024.IsPowerOfTwo(32);
         }
     }
 }
