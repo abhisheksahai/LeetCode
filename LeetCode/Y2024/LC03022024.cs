@@ -145,6 +145,20 @@
             ans = ReverseList(ans.next);
             return ans;
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/reverse-linked-list/description/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        public static ListNode ReverseListWithRecursion(ListNode head)
+        {
+            if (head == null || head.next == null)
+            {
+                return head;
+            }
+            ListNode temp = ReverseListWithRecursion(head.next);
+        }
     }
 
 }
