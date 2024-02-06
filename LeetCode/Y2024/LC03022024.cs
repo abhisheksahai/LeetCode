@@ -15,6 +15,20 @@ namespace LeetCode.Y2024
             }
         }
 
+        public class Node
+        {
+            public int val;
+            public Node next;
+            public Node random;
+
+            public Node(int _val)
+            {
+                val = _val;
+                next = null;
+                random = null;
+            }
+        }
+
         /// <summary>
         /// https://leetcode.com/problems/reverse-linked-list/
         /// SC=O(N) and TC=O(1). This is very important, always keep handy
@@ -161,28 +175,14 @@ namespace LeetCode.Y2024
                 return head;
             }
             ListNode temp = ReverseListWithRecursion(head.next);
-            head.next.next = temp;
+            head.next.next = head;
             head.next = null;
             return temp;
         }
 
-        public class Node
-        {
-            public int val;
-            public Node next;
-            public Node random;
-
-            public Node(int _val)
-            {
-                val = _val;
-                next = null;
-                random = null;
-            }
-        }
-
         /*
          * In shallow copy multiple variable reference to same object
-         * In Deep copy reach variable has its own copt of the object
+         * In Deep copy reach variable has its own copy of the object
          */
 
         /// <summary>
@@ -225,8 +225,7 @@ namespace LeetCode.Y2024
             ListNode prv = null;
             ListNode next = null;
             current = head;
-
-
+            return head;
         }
     }
 
