@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Y2024
+﻿using System.Xml.Linq;
+
+namespace LeetCode.Y2024
 {
     public class LC03022024
     {
@@ -148,6 +150,7 @@
 
         /// <summary>
         /// https://leetcode.com/problems/reverse-linked-list/description/
+        /// TC=O(N) and SC=O(N)=> SC = O(N) because of recursive stack
         /// </summary>
         /// <param name="head"></param>
         /// <returns></returns>
@@ -158,6 +161,72 @@
                 return head;
             }
             ListNode temp = ReverseListWithRecursion(head.next);
+            head.next.next = temp;
+            head.next = null;
+            return temp;
+        }
+
+        public class Node
+        {
+            public int val;
+            public Node next;
+            public Node random;
+
+            public Node(int _val)
+            {
+                val = _val;
+                next = null;
+                random = null;
+            }
+        }
+
+        /*
+         * In shallow copy multiple variable reference to same object
+         * In Deep copy reach variable has its own copt of the object
+         */
+
+        /// <summary>
+        /// https://leetcode.com/problems/copy-list-with-random-pointer/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        public Node CopyRandomList(Node head)
+        {
+            return head;
+        }
+
+
+        /// <summary>
+        /// https://leetcode.com/problems/reverse-nodes-in-k-group/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public ListNode ReverseKGroup(ListNode head, int k)
+        {
+            if (head == null || k == 1)
+            {
+                return head;
+            }
+
+            int count = 0;
+            ListNode current = head;
+            while (current != null && count < k)
+            {
+                current = current.next;
+                count++;
+            }
+
+            if (count < k)
+            {
+                return head;
+            }
+
+            ListNode prv = null;
+            ListNode next = null;
+            current = head;
+
+
         }
     }
 
