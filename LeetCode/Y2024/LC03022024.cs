@@ -192,7 +192,39 @@ namespace LeetCode.Y2024
         /// <returns></returns>
         public Node CopyRandomList(Node head)
         {
-            return head;
+            //1.Create a deep copy of existing nodes
+            Node p = head;
+            while (p != null)
+            {
+                Node nextNode = p.next;
+                Node newP = new(p.val)
+                {
+                    next = nextNode
+                };
+                p.next = newP;
+                p = nextNode;
+            }
+
+            //2.Set random pointer
+            p = head;
+            while (p != null)
+            {
+                Node newP = p.next;
+                newP.random = (p.random != null) ? p.random.next : null;
+                p = newP.next;
+            }
+
+            //3.Separate deepy from original list
+            p = head;
+            Node ret = (p != null) ? p.next : null;
+            while (p != null)
+            {
+                Node newP = p.next;
+                p.next = newP.next;
+                p = p.next;
+                newP.next = (p != null) ? p.next : null;
+            }
+            return ret;
         }
 
 
