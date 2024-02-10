@@ -29,6 +29,7 @@ namespace LeetCode.Y2024
 
         /// <summary>
         /// https://leetcode.com/problems/valid-parentheses/
+        /// TC=O(n) and SC=O(n)
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -57,6 +58,27 @@ namespace LeetCode.Y2024
                 }
             }
             return stack.Count == 0;
+        }
+
+
+        /// <summary>
+        /// Input = [2, 5, 3, 7, 8, 1, 9]  and Output = [-1, 2, 2, 3, 7, -1, 1] 
+        /// TC=O(N) and SC=O(N)
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int[] PreviousSmallerNumber(int[] nums)
+        {
+            if (nums == null || nums.Length == 0)
+            {
+                return nums;
+            }
+            Stack<int> stack = new();
+            for (int i = 0; i < nums.Length; i++)
+            {
+
+            }
+            return nums;
         }
     }
 }
