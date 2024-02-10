@@ -1,3 +1,7 @@
+Stack in C#
+https://www.geeksforgeeks.org/c-sharp-stack-with-examples/
+
+
 Shallow copy and Deep Copy
 In shallow copy multiple variable reference to same object
 In Deep copy reach variable has its own copt of the object
