@@ -73,12 +73,13 @@ namespace LeetCode.Y2024
             {
                 return nums;
             }
+            int[] result = new int[nums.Length];
             Stack<int> stack = new();
             for (int i = 0; i < nums.Length; i++)
             {
 
             }
-            return nums;
+            return result;
         }
     }
 }
