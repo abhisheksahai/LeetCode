@@ -81,8 +81,6 @@ namespace LeetCode.Y2024
             return ans.next;
         }
 
-
-
         /// <summary>
         /// https://leetcode.com/problems/add-two-numbers/
         /// MS,SF,Amazon
@@ -226,7 +224,6 @@ namespace LeetCode.Y2024
             }
             return ret;
         }
-
 
         /// <summary>
         /// https://leetcode.com/problems/reverse-nodes-in-k-group/
