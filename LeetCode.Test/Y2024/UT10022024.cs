@@ -6,6 +6,19 @@ namespace LeetCode.Test.Y2024
     public class UT10022024
     {
         [Test]
+        public void CustomStackTest()
+        {
+            CustomStack customStack = new(5);
+            customStack.Push(10);
+            customStack.Push(11);
+            customStack.Push(12);
+            int pop1= customStack.Pop();
+            customStack.Pop();
+            customStack.Pop();
+            var result = customStack.IsEmpty();
+        }
+
+        [Test]
         public void ReverseStringTest()
         {
             LC10022024.ReverseString(['h', 'e', 'l', 'l', 'o']);

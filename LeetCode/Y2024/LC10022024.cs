@@ -1,10 +1,47 @@
-﻿using System.Collections;
-
-namespace LeetCode.Y2024
+﻿namespace LeetCode.Y2024
 {
     //https://www.geeksforgeeks.org/c-sharp-stack-with-examples/
     public class LC10022024
     {
+        public class CustomStack
+        {
+            int top;
+            int _maxCapacity;
+            int[] arr;
+
+            public CustomStack(int? maxCapacity)
+            {
+                top = -1;
+                _maxCapacity = maxCapacity.HasValue ? maxCapacity.Value : 1000;
+                arr = new int[_maxCapacity];
+            }
+
+            public void Push(int value)
+            {
+                if (top > _maxCapacity)
+                {
+                    Console.WriteLine("Stack overflow exception");
+                    return;
+                }
+                arr[++top] = value;
+            }
+
+            public int Pop()
+            {
+                if (top < 0)
+                {
+                    Console.WriteLine("Stack underflow exception");
+                    return -1;
+                }
+                return arr[top--];
+            }
+
+            public bool IsEmpty()
+            {
+                return top < 0;
+            }
+        }
+
         /// <summary>
         /// https://leetcode.com/problems/reverse-string/
         /// </summary>
