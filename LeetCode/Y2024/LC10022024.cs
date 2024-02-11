@@ -77,9 +77,107 @@ namespace LeetCode.Y2024
             Stack<int> stack = new();
             for (int i = 0; i < nums.Length; i++)
             {
+                while (stack.Count > 0)
+                {
 
+                }
             }
             return result;
+        }
+
+
+        /// <summary>
+        /// https://leetcode.com/problems/min-stack/
+        //Salesforce and British Petroleum
+        /// </summary>
+        public class MinStack
+        {
+            Stack<(int value, int minValue)> minStack;
+            int minValue = int.MaxValue;
+
+            public MinStack()
+            {
+                minStack = new Stack<(int value, int minValue)>();
+            }
+
+            public void Push(int val)
+            {
+                if (minValue > val)
+                {
+                    minValue = val;
+                }
+                minStack.Push((val, minValue));
+            }
+
+            public void Pop()
+            {
+                minStack.Pop();
+                if (minStack.Count > 0)
+                {
+                    minValue = minStack.Peek().minValue;
+                }
+                else
+                {
+                    minValue = int.MaxValue;
+                }
+            }
+
+            public int Top()
+            {
+                return minStack.Peek().value;
+            }
+
+            public int GetMin()
+            {
+                return minStack.Peek().minValue;
+            }
+        }
+
+        /// <summary>
+        /// It use a one dimention array of size 2
+        /// Tc=O(1) for each function and SC=O(N)
+        /// </summary>
+        public class MinStackWithArray
+        {
+            Stack<int[]> minStack;
+            int minValue = int.MaxValue;
+
+            public MinStackWithArray()
+            {
+                minStack = new Stack<int[]>();
+            }
+
+            public void Push(int val)
+            {
+                if (minValue > val)
+                {
+                    minValue = val;
+                }
+                minStack.Push([val, minValue]);
+            }
+
+            public void Pop()
+            {
+                minStack.Pop();
+                if (minStack.Count > 0)
+                {
+                    minValue = minStack.Peek()[1];
+                }
+                else
+                {
+                    minValue = int.MaxValue;
+                }
+            }
+
+            public int Top()
+            {
+                return minStack.Peek()[0];
+            }
+
+            public int GetMin()
+            {
+                return minStack.Peek()[1];
+            }
         }
     }
 }
