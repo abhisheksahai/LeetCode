@@ -233,6 +233,7 @@ namespace LeetCode.Y2024
         /// <summary>
         /// https://leetcode.com/problems/largest-rectangle-in-histogram/
         /// Amazon, Bp, SF
+        /// Calculte previous and next smaller
         /// </summary>
         /// <param name="heights"></param>
         /// <returns></returns>
@@ -242,6 +243,27 @@ namespace LeetCode.Y2024
 
             return result;
 
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public string RemoveDuplicates(string s)
+        {
+            return "";
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public string RemoveDuplicates(string s, int k)
+        {
+            return "";
         }
     }
 }
