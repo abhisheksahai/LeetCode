@@ -73,14 +73,29 @@ namespace LeetCode.Y2024
             {
                 return nums;
             }
+            if (nums.Length == 1)
+            {
+                return [-1];
+            }
             int[] result = new int[nums.Length];
             Stack<int> stack = new();
-            for (int i = 0; i < nums.Length; i++)
+            result[0] = -1;
+            stack.Push(nums[0]);
+            for (int i = 1; i < nums.Length; i++)
             {
-                while (stack.Count > 0)
+                while (stack.Count > 0 && stack.Peek() > nums[i])
                 {
-
+                    stack.Pop();
                 }
+                if (stack.Count == 0)
+                {
+                    result[i] = -1;
+                }
+                else
+                {
+                    result[i] = stack.Peek();
+                }
+                stack.Push(nums[i]);
             }
             return result;
         }

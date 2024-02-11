@@ -18,6 +18,11 @@ namespace LeetCode.Test.Y2024
             var result2 = LC10022024.IsValid("()");
         }
 
+        [Test]
+        public void PreviousSmallerNumberTest()
+        {
+            var result = LC10022024.PreviousSmallerNumber([2, 5, 3, 7, 8, 1, 9]);
+        }
 
         [Test]
         public void MinStackTest()
