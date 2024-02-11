@@ -31,5 +31,11 @@ namespace LeetCode.Test.Y2024
             var top1 = minStack.Top();    // return 0
             var min2 = minStack.GetMin(); // return -2
         }
+
+        [Test]
+        public void EvalRPNTest()
+        {
+            var result = LC10022024.EvalRPN(["4", "13", "5", "/", "+"]);
+        }
     }
 }

@@ -179,5 +179,69 @@ namespace LeetCode.Y2024
                 return minStack.Peek()[1];
             }
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/evaluate-reverse-polish-notation/
+        /// Tc=O(N) and SC=O(N)
+        /// </summary>
+        /// <param name="tokens"></param>
+        /// <returns></returns>
+        public static int EvalRPN(string[] tokens)
+        {
+            int result = 0;
+            if (tokens == null || tokens.Length == 0) return result;
+            if (tokens.Length == 1)
+            {
+                return Convert.ToInt32(tokens[0]);
+            }
+            Stack<int> stack = new Stack<int>();
+            foreach (string token in tokens)
+            {
+                int num = 0;
+                if (int.TryParse(token, out num))
+                {
+                    stack.Push(num);
+                }
+                else
+                {
+                    //The order is very important
+                    int num2 = stack.Pop();
+                    int num1 = stack.Pop();
+                    switch (token)
+                    {
+                        case "+":
+                            result = num1 + num2;
+                            break;
+                        case "-":
+                            result = num1 - num2;
+                            break;
+                        case "*":
+                            result = num1 * num2;
+                            break;
+                        case "/":
+                            result = num1 / num2;
+                            break;
+                        default:
+                            break;
+                    }
+                    stack.Push(result);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/largest-rectangle-in-histogram/
+        /// Amazon, Bp, SF
+        /// </summary>
+        /// <param name="heights"></param>
+        /// <returns></returns>
+        public static int LargestRectangleArea(int[] heights)
+        {
+            int result = 0;
+
+            return result;
+
+        }
     }
 }
