@@ -292,7 +292,6 @@
         public static int LargestRectangleArea(int[] heights)
         {
             int result = 0;
-
             return result;
 
         }

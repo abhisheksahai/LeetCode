@@ -12,9 +12,9 @@ namespace LeetCode.Test.Y2024
             customStack.Push(10);
             customStack.Push(11);
             customStack.Push(12);
-            int pop1= customStack.Pop();
-            customStack.Pop();
-            customStack.Pop();
+            int pop = customStack.Pop();
+            pop = customStack.Pop();
+            pop = customStack.Pop();
             var result = customStack.IsEmpty();
         }
 
