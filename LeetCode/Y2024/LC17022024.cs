@@ -15,9 +15,7 @@
         /// <returns></returns>
         public static int Search(int[] nums, int target)
         {
-            int low, mid, high;
-            low = 0;
-            high = nums.Length - 1;
+            int low = 0, mid, high = nums.Length - 1;
             while (low <= high)
             {
                 //Below formula will overcome issue of integer out of range
@@ -47,7 +45,7 @@
         /// <returns></returns>
         public static int[] FirstAndLast(int[] arr, int n, int x)
         {
-            int[] result = new int[2];
+            int[] result = new int[2] { -1, 1 };
             result = [FindFirst(arr, n, x), FindLast(arr, x, x)];
             return result;
         }
@@ -55,13 +53,13 @@
         public static int FindFirst(int[] arr, int n, int x)
         {
             int low = 0, mid = 0, high = n - 1, result = -1;
-            while (low < high)
+            while (low <= high)
             {
                 mid = low + (high - low) / 2;
                 if (arr[mid] == x)
                 {
-                    high = mid - 1;
                     result = mid;
+                    high = mid - 1;
                 }
                 else if (arr[mid] < x)
                 {
@@ -78,13 +76,13 @@
         public static int FindLast(int[] arr, int n, int x)
         {
             int low = 0, mid = 0, high = n - 1, result = -1;
-            while (low < high)
+            while (low <= high)
             {
                 mid = low + (high - low) / 2;
                 if (arr[mid] == x)
                 {
-                    low = mid + 1;
                     result = mid;
+                    low = mid + 1;
                 }
                 else if (arr[mid] < x)
                 {
@@ -98,6 +96,67 @@
             return result;
         }
 
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static int[] SearchRange(int[] nums, int target)
+        {
+            int[] result = [-1, -1];
+            result = [FindFirst(nums, target), FindLast(nums, target)];
+            return result;
+        }
+
+        public static int FindFirst(int[] nums, int target)
+        {
+            int result = -1;
+            int low = 0, mid, high = nums.Length - 1;
+            while (low <= high)
+            {
+                mid = low + (high - low) / 2;
+                if (nums[mid] == target)
+                {
+                    result = mid;
+                    high = mid - 1;
+                }
+                else if (nums[mid] < target)
+                {
+                    low = mid + 1;
+                }
+                else
+                {
+                    high = mid - 1;
+                }
+            }
+            return result;
+        }
+
+        public static int FindLast(int[] nums, int target)
+        {
+            int result = -1;
+            int low = 0, mid, high = nums.Length - 1;
+            while (low <= high)
+            {
+                mid = low + (high - low) / 2;
+                if (nums[mid] == target)
+                {
+                    result = mid;
+                    low = mid + 1;
+                }
+                else if (nums[mid] < target)
+                {
+                    low = mid + 1;
+                }
+                else
+                {
+                    high = mid - 1;
+                }
+            }
+            return result;
+        }
 
         //Find frquency of numbers in sorted array
         //https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
