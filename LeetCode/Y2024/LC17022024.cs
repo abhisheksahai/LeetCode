@@ -262,30 +262,34 @@
                 {
                     return mid;
                 }
-
+                //checking if left falf is sorted
                 if (nums[low] <= nums[mid])
                 {
+                    //Checking if target lies in the left half
                     if (nums[low] <= target && target < nums[mid])
                     {
                         high = mid - 1;
                     }
+                    //Target lies on the right side of the mid
                     else
                     {
                         low = mid + 1;
                     }
                 }
+                //Right half is sorted
                 else
                 {
+                    //Checking if target lies in the right half
                     if (nums[mid] < target && target <= nums[high])
                     {
                         low = mid + 1;
                     }
+                    //Target lies on the left side of the mid
                     else
                     {
                         high = mid - 1;
                     }
                 }
-
             }
             return -1;
         }
