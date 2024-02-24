@@ -247,31 +247,47 @@
 
         /// <summary>
         /// https://leetcode.com/problems/search-in-rotated-sorted-array/
+        /// After k rotations, if we array is divided into two parts. low to mid and mid+1 to high. one of the sub array will be in sorted order always
         /// </summary>
         /// <param name="nums"></param>
         /// <param name="target"></param>
         /// <returns></returns>
         public static int SearchInRotatedSortedArray(int[] nums, int target)
         {
-            int result = -1;
             int low = 0, mid, high = nums.Length - 1;
-            while (low != high)
+            while (low <= high)
             {
                 mid = low + (high - low) / 2;
                 if (nums[mid] == target)
                 {
                     return mid;
                 }
-                else if (nums[mid] > target)
+
+                if (nums[low] <= nums[mid])
                 {
-                    low = mid;
+                    if (nums[low] <= target && target < nums[mid])
+                    {
+                        high = mid - 1;
+                    }
+                    else
+                    {
+                        low = mid + 1;
+                    }
                 }
-                else if (nums[mid] < target)
+                else
                 {
-                    high = mid;
+                    if (nums[mid] < target && target <= nums[high])
+                    {
+                        low = mid + 1;
+                    }
+                    else
+                    {
+                        high = mid - 1;
+                    }
                 }
+
             }
-            return result;
+            return -1;
         }
 
     }
