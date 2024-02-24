@@ -45,7 +45,7 @@
         /// <returns></returns>
         public static int[] FirstAndLast(int[] arr, int n, int x)
         {
-            int[] result = new int[2] { -1, 1 };
+            int[] result = new int[2];
             result = [FindFirst(arr, n, x), FindLast(arr, x, x)];
             return result;
         }
@@ -160,6 +160,119 @@
 
         //Find frquency of numbers in sorted array
         //https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
+        public static int Count(int[] arr, int n, int x)
+        {
+            if (x < arr[0] || x > arr[n - 1]) return 0;
+            int firstOccurance = CountFirstOccurance(arr, n, x);
+            int lastOccurance = CountLastOccurance(arr, n, x);
+            int result = 0;
+            if (firstOccurance >= 0 && lastOccurance >= 0)
+            {
+                result = lastOccurance - firstOccurance + 1;
+            }
+            return result;
+        }
+
+
+        public static int CountFirstOccurance(int[] arr, int n, int x)
+        {
+            int low = 0, mid, high = n - 1, result = -1;
+            while (low <= high)
+            {
+                mid = low + (high - low) / 2;
+                if (arr[mid] == x)
+                {
+                    result = mid;
+                    high = mid - 1;
+                }
+                else if (arr[mid] < x)
+                {
+                    low = mid + 1;
+                }
+                else if (arr[mid] > x)
+                {
+                    high = mid - 1;
+                }
+            }
+            return result;
+        }
+
+        public static int CountLastOccurance(int[] arr, int n, int x)
+        {
+            int low = 0, mid, high = n - 1, result = -1;
+            while (low <= high)
+            {
+                mid = low + (high - low) / 2;
+                if (arr[mid] == x)
+                {
+                    result = mid;
+                    low = mid + 1;
+                }
+                else if (arr[mid] < x)
+                {
+                    low = mid + 1;
+                }
+                else if (arr[mid] > x)
+                {
+                    high = mid - 1;
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-peak-element/
+        /// Befor peak the array is in increasing order after peak the array is in decreasing order
+        /// TC=O(logn) and SC=O(1)
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int FindPeakElement(int[] nums)
+        {
+            int low = 0, mid, high = nums.Length - 1;
+            while (low != high)
+            {
+                mid = low + (high - low) / 2;
+                if (nums[mid] > nums[mid + 1])
+                {
+                    high = mid;
+                }
+                else
+                {
+                    low = mid + 1;
+                }
+            }
+            return high;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/search-in-rotated-sorted-array/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static int SearchInRotatedSortedArray(int[] nums, int target)
+        {
+            int result = -1;
+            int low = 0, mid, high = nums.Length - 1;
+            while (low != high)
+            {
+                mid = low + (high - low) / 2;
+                if (nums[mid] == target)
+                {
+                    return mid;
+                }
+                else if (nums[mid] > target)
+                {
+                    low = mid;
+                }
+                else if (nums[mid] < target)
+                {
+                    high = mid;
+                }
+            }
+            return result;
+        }
 
     }
 }
