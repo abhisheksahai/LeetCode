@@ -5,26 +5,58 @@
     /// </summary>
     public class LC25022024
     {
-        public class Node
+        public class Node(int val = 0, LC25022024.Node? left = null, LC25022024.Node? right = null)
         {
-            public int val;
-            public Node left;
-            public Node right;
-            public Node(int val = 0, Node left = null, Node right = null)
-            {
-                this.val = val;
-                this.left = left;
-                this.right = right;
-            }
+            public int val = val;
+            public Node? left = left;
+            public Node? right = right;
         }
 
         /// <summary>
-        /// BST : PreOrder traversal
+        /// BST : PreOrder traversal (Data, Left, Right)
+        /// TC=O(N) as it will travel n nodes
+        /// The time complexity of preorder traversal is O(n), where 'n' is the size of binary tree. Whereas, the space complexity of preorder traversal is O(1), if we do not consider the stack size for function calls. Otherwise, the space complexity of preorder traversal is O(h), where 'h' is the height of the tree.
         /// </summary>
         /// <param name="node"></param>
-        public static void PreOrder(Node node)
+        public static void PreOrder(Node? root)
         {
+            if (root == null)
+            {
+                return;
+            }
+            Console.WriteLine(root.val);
+            PreOrder(root.left);
+            PreOrder(root.right);
+        }
 
+        /// <summary>
+        /// BST : InOrder traversal (Left,Data, Right)
+        /// </summary>
+        /// <param name="root"></param>
+        public static void InOrder(Node? root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            InOrder(root.left);
+            Console.WriteLine(root.val);
+            InOrder(root.right);
+        }
+
+        /// <summary>
+        /// BST : PostOrder traversal (Left,Right,Data)
+        /// </summary>
+        /// <param name="root"></param>
+        public static void PostOrder(Node? root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            PostOrder(root.left);
+            PostOrder(root.right);
+            Console.WriteLine(root.val);
         }
 
         /// <summary>
@@ -34,10 +66,9 @@
         /// <returns></returns>
         public static int SumBinaryTree(Node root)
         {
-            return 0;
+            if (root == null) return 0;
+            return SumBinaryTree(root.left) + SumBinaryTree(root.right) + root.val;
         }
-
-
 
         /// <summary>
         /// https://www.geeksforgeeks.org/problems/count-leaves-in-binary-tree/1
@@ -45,22 +76,20 @@
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public int CountLeaves(Node root)
+        public static int CountLeaves(Node root)
         {
-            if (root.left == null && root.right != null || root.left != null && root.right == null)
-            {
-                return 1;
-            }
-            int count = 0;
+            if (root == null) return 0;
+            if (root.left == null && root.right == null) return 1;
+            int sum = 0;
             if (root.left != null)
             {
-                count += CountLeaves(root.left);
+                sum += CountLeaves(root.left);
             }
             if (root.right != null)
             {
-                count += CountLeaves(root.right);
+                sum += CountLeaves(root.right);
             }
-            return count;
+            return sum;
         }
 
 
