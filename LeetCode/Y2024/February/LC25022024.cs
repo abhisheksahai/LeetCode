@@ -1,17 +1,21 @@
 ﻿namespace LeetCode.Y2024.February
 {
     /// <summary>
-    /// Binary Tree
+    /// Binary tree. Each node will have 0, 1 or 2 elements only
     /// </summary>
     public class LC25022024
     {
-        /// <summary>
-        /// Tree -> Binary tree. Each node will have 0, 1 or 2 elements only
-        /// </summary>
-        public class Node1
+        public class Node
         {
-            int key;
-            Node1 left, right;
+            public int val;
+            public Node left;
+            public Node right;
+            public Node(int val = 0, Node left = null, Node right = null)
+            {
+                this.val = val;
+                this.left = left;
+                this.right = right;
+            }
         }
 
         /// <summary>
@@ -19,23 +23,12 @@
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public static int SumBinaryTree(Node1 root)
+        public static int SumBinaryTree(Node root)
         {
             return 0;
         }
 
-        public class Node2
-        {
-            public int data;
-            public Node2 left;
-            public Node2 right;
-            public Node2(int item)
-            {
-                data = item;
-                left = null;
-                right = null;
-            }
-        }
+
 
         /// <summary>
         /// https://www.geeksforgeeks.org/problems/count-leaves-in-binary-tree/1
@@ -43,7 +36,7 @@
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public int CountLeaves(Node2 root)
+        public int CountLeaves(Node root)
         {
             if (root.left == null && root.right != null || root.left != null && root.right == null)
             {
@@ -61,25 +54,13 @@
             return count;
         }
 
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-            public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-            {
-                this.val = val;
-                this.left = left;
-                this.right = right;
-            }
-        }
 
         /// <summary>
         /// https://leetcode.com/problems/binary-tree-level-order-traversal/
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public static IList<IList<int>> LevelOrder(TreeNode root)
+        public static IList<IList<int>> LevelOrder(Node root)
         {
             IList<IList<int>> result = new List<IList<int>>();
             return result;
@@ -90,14 +71,14 @@
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public static IList<int> RightSideView(TreeNode root)
+        public static IList<int> RightSideView(Node root)
         {
             List<int> result = new List<int>();
             RightSideDFS(root, 1, result);
             return result;
         }
 
-        private static void RightSideDFS(TreeNode node, int depth, List<int> result)
+        private static void RightSideDFS(Node node, int depth, List<int> result)
         {
             if (node == null) return;
             if (result.Count < depth)

@@ -1,6 +1,4 @@
-﻿using static LeetCode.Y2024.February.LC03022024;
-
-namespace LeetCode.Y2024.February
+﻿namespace LeetCode.Y2024.February
 {
 
     /// <summary>
@@ -97,7 +95,6 @@ namespace LeetCode.Y2024.February
             }
             return result;
         }
-
 
         /// <summary>
         /// https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
