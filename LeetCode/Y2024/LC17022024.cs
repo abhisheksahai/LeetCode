@@ -2,7 +2,7 @@
 {
 
     /// <summary>
-    /// Binary search
+    /// Binary search : In BS we always need to set low, mid and high
     /// </summary>
     public class LC17022024
     {
@@ -248,6 +248,7 @@
         /// <summary>
         /// https://leetcode.com/problems/search-in-rotated-sorted-array/
         /// After k rotations, if we array is divided into two parts. low to mid and mid+1 to high. one of the sub array will be in sorted order always
+        /// TC= O(logn)
         /// </summary>
         /// <param name="nums"></param>
         /// <param name="target"></param>
@@ -262,7 +263,7 @@
                 {
                     return mid;
                 }
-                //checking if left falf is sorted
+                //checking if left half is sorted
                 if (nums[low] <= nums[mid])
                 {
                     //Checking if target lies in the left half
@@ -292,6 +293,59 @@
                 }
             }
             return -1;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/search-a-2d-matrix/
+        /// Tc=O(log m*n)
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static bool SearchMatrix(int[][] matrix, int target)
+        {
+            int rowCount = matrix.Length;
+            int columnCount = matrix[0].Length;
+            int low = 0, mid, high = rowCount * columnCount - 1;
+            while (low <= high)
+            {
+                mid = low + (high - low) / 2;
+                int r = mid / columnCount;
+                int c = mid % columnCount;
+                int midValue = matrix[r][c];
+                if (midValue == target)
+                {
+                    return true;
+                }
+                else if (midValue < target)
+                {
+                    low = mid + 1;
+                }
+                else
+                {
+                    high = mid - 1;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Tree -> Binary tree. Each node will have only two elements
+        /// </summary>
+        public class Node
+        {
+            int key;
+            Node left, right;
+        }
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/sum-of-binary-tree/1
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static int SumBinaryTree(Node root)
+        {
+            return 0;
         }
 
     }
