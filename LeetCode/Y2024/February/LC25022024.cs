@@ -19,6 +19,15 @@
         }
 
         /// <summary>
+        /// BST : PreOrder traversal
+        /// </summary>
+        /// <param name="node"></param>
+        public static void PreOrder(Node node)
+        {
+
+        }
+
+        /// <summary>
         /// https://www.geeksforgeeks.org/problems/sum-of-binary-tree/1
         /// </summary>
         /// <param name="root"></param>
