@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Y2024
+﻿namespace LeetCode.Y2024.January
 {
     public class LC13012024
     {
@@ -79,7 +79,7 @@
             List<int> result = [];
             while (j <= len - 1)
             {
-                int max = Int32.MinValue;
+                int max = int.MinValue;
                 for (int t = i; t <= j; t++)
                 {
                     max = Math.Max(max, nums[t]);

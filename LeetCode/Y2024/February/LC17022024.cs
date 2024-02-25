@@ -1,6 +1,6 @@
-﻿using static LeetCode.Y2024.LC03022024;
+﻿using static LeetCode.Y2024.February.LC03022024;
 
-namespace LeetCode.Y2024
+namespace LeetCode.Y2024.February
 {
 
     /// <summary>

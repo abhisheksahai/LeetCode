@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Y2024
+﻿namespace LeetCode.Y2024.January
 {
     public class LC14012024
     {
@@ -45,7 +45,7 @@
 
         public static bool IsKBitSetForNumber(int num, int k)
         {
-            int mask = 1 << (k - 1);
+            int mask = 1 << k - 1;
             int result = num & mask;
             if (result == 0)
             {
@@ -56,15 +56,15 @@
 
         public static int SetKBitForNumber(int num, int k)
         {
-            int mask = 1 << (k - 1);
+            int mask = 1 << k - 1;
             num = num | mask;
             return num;
         }
 
         public static int ClearKBit(int num, int k)
         {
-            int mask = 1 << (k - 1);
-            mask = (~mask);
+            int mask = 1 << k - 1;
+            mask = ~mask;
             num = num & mask;
             return num;
         }

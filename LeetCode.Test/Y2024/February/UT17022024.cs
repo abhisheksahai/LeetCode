@@ -1,6 +1,6 @@
-﻿using LeetCode.Y2024;
+﻿using LeetCode.Y2024.February;
 
-namespace LeetCode.Test.Y2024
+namespace LeetCode.Test.Y2024.February
 {
     public class UT17022024
     {

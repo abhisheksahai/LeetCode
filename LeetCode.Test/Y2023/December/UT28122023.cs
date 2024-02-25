@@ -1,5 +1,4 @@
-﻿using LeetCode.Y2023.December;
-using static LeetCode.Y2023.December.LC28122023;
+﻿using static LeetCode.Y2023.December.LC28122023;
 
 namespace LeetCode.Test.Y2023.December
 {

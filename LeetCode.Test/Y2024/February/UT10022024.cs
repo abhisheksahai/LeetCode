@@ -1,7 +1,6 @@
-﻿using LeetCode.Y2024;
-using static LeetCode.Y2024.LC10022024;
+﻿using static LeetCode.Y2024.February.LC10022024;
 
-namespace LeetCode.Test.Y2024
+namespace LeetCode.Test.Y2024.February
 {
     public class UT10022024
     {
@@ -21,20 +20,20 @@ namespace LeetCode.Test.Y2024
         [Test]
         public void ReverseStringTest()
         {
-            LC10022024.ReverseString(['h', 'e', 'l', 'l', 'o']);
+            ReverseString(['h', 'e', 'l', 'l', 'o']);
         }
 
         [Test]
         public void IsValidTest()
         {
-            var result1 = LC10022024.IsValid("({[]})");
-            var result2 = LC10022024.IsValid("()");
+            var result1 = IsValid("({[]})");
+            var result2 = IsValid("()");
         }
 
         [Test]
         public void PreviousSmallerNumberTest()
         {
-            var result = LC10022024.PreviousSmallerNumber([2, 5, 3, 7, 8, 1, 9]);
+            var result = PreviousSmallerNumber([2, 5, 3, 7, 8, 1, 9]);
         }
 
         [Test]
@@ -53,7 +52,7 @@ namespace LeetCode.Test.Y2024
         [Test]
         public void EvalRPNTest()
         {
-            var result = LC10022024.EvalRPN(["4", "13", "5", "/", "+"]);
+            var result = EvalRPN(["4", "13", "5", "/", "+"]);
         }
     }
 }

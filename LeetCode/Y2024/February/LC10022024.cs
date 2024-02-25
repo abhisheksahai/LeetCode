@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Y2024
+﻿namespace LeetCode.Y2024.February
 {
     //https://www.geeksforgeeks.org/c-sharp-stack-with-examples/
     public class LC10022024

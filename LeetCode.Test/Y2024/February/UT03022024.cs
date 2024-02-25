@@ -1,7 +1,6 @@
-﻿using LeetCode.Y2024;
-using static LeetCode.Y2024.LC03022024;
+﻿using static LeetCode.Y2024.February.LC03022024;
 
-namespace LeetCode.Test.Y2024
+namespace LeetCode.Test.Y2024.February
 {
     public class UT03022024
     {
@@ -19,7 +18,7 @@ namespace LeetCode.Test.Y2024
                 ListNode newNode = new(i);
                 temp.next = newNode;
             }
-            var reverList = LC03022024.ReverseListWithStack(head);
+            var reverList = ReverseListWithStack(head);
         }
 
         [Test]
@@ -38,7 +37,7 @@ namespace LeetCode.Test.Y2024
             ListNode node7 = new(4);
             node5.next = node6;
             node6.next = node7;
-            var reverList = LC03022024.AddTwoNumbersII(node1, node5);
+            var reverList = AddTwoNumbersII(node1, node5);
         }
 
         [Test]
@@ -55,7 +54,7 @@ namespace LeetCode.Test.Y2024
                 ListNode newNode = new(i);
                 temp.next = newNode;
             }
-            var reverList = LC03022024.ReverseListWithRecursion(head);
+            var reverList = ReverseListWithRecursion(head);
         }
     }
 }

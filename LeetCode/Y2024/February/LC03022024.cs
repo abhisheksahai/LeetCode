@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 
-namespace LeetCode.Y2024
+namespace LeetCode.Y2024.February
 {
     public class LC03022024
     {
@@ -208,19 +208,19 @@ namespace LeetCode.Y2024
             while (p != null)
             {
                 Node newP = p.next;
-                newP.random = (p.random != null) ? p.random.next : null;
+                newP.random = p.random != null ? p.random.next : null;
                 p = newP.next;
             }
 
             //3.Separate deepy from original list
             p = head;
-            Node ret = (p != null) ? p.next : null;
+            Node ret = p != null ? p.next : null;
             while (p != null)
             {
                 Node newP = p.next;
                 p.next = newP.next;
                 p = p.next;
-                newP.next = (p != null) ? p.next : null;
+                newP.next = p != null ? p.next : null;
             }
             return ret;
         }
