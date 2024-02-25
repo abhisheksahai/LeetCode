@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Y2023
+﻿namespace LeetCode.Y2023.December
 {
     public class LC12122023
     {
@@ -46,7 +46,7 @@
             }
             result = chars.Count() != 0 ? result + 1 : result;
             return result;
-        }       
+        }
 
         /// <summary>
         /// https://leetcode.com/problems/intersection-of-two-arrays/
@@ -75,7 +75,7 @@
             }
             return [.. result];
         }
-       
+
         /// <summary>
         /// https://leetcode.com/problems/rotate-array/
         /// TC=O(N) and SC=O(N)

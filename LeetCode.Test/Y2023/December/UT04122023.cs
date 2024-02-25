@@ -1,6 +1,6 @@
-﻿using LeetCode.Y2023;
+﻿using LeetCode.Y2023.December;
 
-namespace LeetCode.Test.Y2023
+namespace LeetCode.Test.Y2023.December
 {
     public class UT04122023
     {
@@ -15,7 +15,7 @@ namespace LeetCode.Test.Y2023
         public void IsPrimeTest()
         {
             bool result = LC04122023.IsPrime(23);
-        }      
+        }
 
         [Test]
         public void MaximumWealthTest()

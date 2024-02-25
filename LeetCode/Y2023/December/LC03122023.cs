@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Y2023
+﻿namespace LeetCode.Y2023.December
 {
     public class LC03122023
     {

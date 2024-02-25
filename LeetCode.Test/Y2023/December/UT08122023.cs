@@ -1,6 +1,6 @@
-﻿using LeetCode.Y2023;
+﻿using LeetCode.Y2023.December;
 
-namespace LeetCode.Test.Y2023
+namespace LeetCode.Test.Y2023.December
 {
     public class UT08122023
     {

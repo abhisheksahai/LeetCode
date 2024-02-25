@@ -2,7 +2,7 @@
 using System.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace LeetCode.Y2023
+namespace LeetCode.Y2023.December
 {
     public class LC23122023
     {
@@ -240,6 +240,6 @@ namespace LeetCode.Y2023
             }
             Array.Copy(nums3, nums1, m + n);
             return nums1;
-        }       
+        }
     }
 }

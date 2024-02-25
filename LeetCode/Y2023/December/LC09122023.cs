@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace LeetCode.Y2023
+namespace LeetCode.Y2023.December
 {
     public class LC09122023
     {

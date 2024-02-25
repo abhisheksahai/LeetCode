@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Y2023
+﻿namespace LeetCode.Y2023.December
 {
     public class LC04122023
     {
@@ -31,7 +31,7 @@
             }
             return true;
         }
-        
+
         /// <summary>
         ///  https://leetcode.com/problems/richest-customer-wealth
         /// </summary>
