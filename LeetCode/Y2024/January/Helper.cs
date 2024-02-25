@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Y2024
+﻿namespace LeetCode.Y2024.January
 {
     public class ListNodeDelete
     {
