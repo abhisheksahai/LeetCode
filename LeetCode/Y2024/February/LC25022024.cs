@@ -112,11 +112,11 @@
                 {
                     Node cur = queue.Dequeue();
                     ints.Add(cur.val);
-                    if(cur.left != null)
+                    if (cur.left != null)
                     {
                         queue.Enqueue(cur.left);
                     }
-                    if(cur.right!=null)
+                    if (cur.right != null)
                     {
                         queue.Enqueue(cur.right);
                     }
@@ -150,6 +150,17 @@
             RightSideDFS(node.left, depth + 1, result);
         }
 
-        //https://www.geeksforgeeks.org/problems/k-distance-from-root/1
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/k-distance-from-root/1
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static List<int> Kdistance(Node root, int k)
+        {
+            List<int> result = [];
+            return result;
+
+        }
     }
 }
