@@ -35,6 +35,18 @@ namespace LeetCode.Test.Y2024.February
             var result = LC25022024.CountLeaves(CreateTree());
         }
 
+        [Test]
+        public void LevelOrderTest()
+        {
+            var result = LC25022024.LevelOrder(CreateTree());
+        }
+
+        [Test]
+        public void RightSideViewTest()
+        {
+            var result = LC25022024.RightSideView(CreateTree());
+        }
+
         private Node CreateTree()
         {
             Node node1 = new Node(1);

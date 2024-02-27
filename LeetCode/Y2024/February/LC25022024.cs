@@ -100,7 +100,30 @@
         /// <returns></returns>
         public static IList<IList<int>> LevelOrder(Node root)
         {
-            IList<IList<int>> result = new List<IList<int>>();
+            IList<IList<int>> result = [];
+            if (root == null) return result;
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(root);
+            while (queue.Count != 0)
+            {
+                List<int> ints = [];
+                int size = queue.Count;
+                while (size != 0)
+                {
+                    Node cur = queue.Dequeue();
+                    ints.Add(cur.val);
+                    if(cur.left != null)
+                    {
+                        queue.Enqueue(cur.left);
+                    }
+                    if(cur.right!=null)
+                    {
+                        queue.Enqueue(cur.right);
+                    }
+                    size--;
+                }
+                result.Add(ints);
+            }
             return result;
         }
 
@@ -111,12 +134,12 @@
         /// <returns></returns>
         public static IList<int> RightSideView(Node root)
         {
-            List<int> result = new List<int>();
+            List<int> result = [];
             RightSideDFS(root, 1, result);
             return result;
         }
 
-        private static void RightSideDFS(Node node, int depth, List<int> result)
+        private static void RightSideDFS(Node? node, int depth, List<int> result)
         {
             if (node == null) return;
             if (result.Count < depth)
