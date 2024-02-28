@@ -47,6 +47,18 @@ namespace LeetCode.Test.Y2024.February
             var result = LC25022024.RightSideView(CreateTree());
         }
 
+        [Test]
+        public void KdistanceTest()
+        {
+            Node node1 = new Node(1);
+            Node node2 = new Node(2);
+            Node node3 = new Node(3);
+            node1.left = node2;
+            node1.right = node3;
+
+            var result = LC25022024.Kdistance(node1, 0);
+        }
+
         private Node CreateTree()
         {
             Node node1 = new Node(1);

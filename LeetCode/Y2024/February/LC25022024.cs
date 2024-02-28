@@ -159,8 +159,51 @@
         public static List<int> Kdistance(Node root, int k)
         {
             List<int> result = [];
+            if (root == null) return result;
+            if(k == 0)
+            {
+                result.Add(root.val);
+                return result;
+            }
+            int currentDistance = 0;
+            Queue<Node> queue = [];
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                int size = queue.Count;
+                currentDistance++;
+                while (size > 0)
+                {
+                    Node node = queue.Dequeue();
+                    if (node.left != null)
+                    {
+                        if (currentDistance == k)
+                        {
+                            Node lNdoe = node.left;
+                            result.Add(lNdoe.val);
+                        }
+                        queue.Enqueue(node.left);
+                    }
+                    if (node.right != null)
+                    {
+                        if (currentDistance == k)
+                        {
+                            Node rNdoe = node.right;
+                            result.Add(rNdoe.val);
+                        }
+                        queue.Enqueue(node.right);
+                    }
+                    size--;
+                }
+                if(currentDistance == k)
+                {
+                    return result;
+                }
+                
+            }
             return result;
 
         }
+
     }
 }
