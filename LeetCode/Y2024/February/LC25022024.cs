@@ -152,6 +152,7 @@
 
         /// <summary>
         /// https://www.geeksforgeeks.org/problems/k-distance-from-root/1
+        /// Using BFS
         /// </summary>
         /// <param name="root"></param>
         /// <param name="k"></param>
@@ -199,10 +200,8 @@
                 {
                     return result;
                 }
-                
             }
             return result;
-
         }
 
     }
