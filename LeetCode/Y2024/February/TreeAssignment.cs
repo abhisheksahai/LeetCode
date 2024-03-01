@@ -47,6 +47,76 @@
             return result;
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-depth-of-binary-tree/
+        /// TC=O(N) wors case we may have to travel all the nodes
+        /// SC=O(N) we are using an addional queue
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static int MinDepth(TreeNode root)
+        {
+            if (root == null) { return 0; }
+            int count = 0;
+            Queue<TreeNode> queue = [];
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                int size = queue.Count;
+                while (size > 0)
+                {
+                    TreeNode node = queue.Dequeue();
+                    if (node.left != null)
+                    {
+                        queue.Enqueue(node.left);
+                    }
+                    if (node.right != null)
+                    {
+                        queue.Enqueue(node.right);
+                    }
+                    if (node.left == null && node.right == null)
+                    {
+                        return count + 1;
+                    }
+                    size--;
+                }
+                count++;
+            }
+            return count;
+        }
 
+        /// <summary>
+        /// https://leetcode.com/problems/binary-tree-level-order-traversal/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static IList<IList<int>> LevelOrder(TreeNode root)
+        {
+            IList<IList<int>> result = [];
+            if (root == null) return result;
+            Queue<TreeNode> queue = [];
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                int size = queue.Count;
+                List<int> list = [];
+                while (size > 0)
+                {
+                    TreeNode node = queue.Dequeue();
+                    list.Add(node.val);
+                    if (node.left != null)
+                    {
+                        queue.Enqueue(node.left);
+                    }
+                    if (node.right != null)
+                    {
+                        queue.Enqueue(node.right);
+                    }
+                    size--;
+                }
+                result.Add(list);
+            }
+            return result;
+        }
     }
 }

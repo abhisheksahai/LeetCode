@@ -15,6 +15,18 @@ namespace LeetCode.Test.Y2024.February
             var result = TreeAssignment.PostorderTraversal(node1);
         }
 
+        [Test]
+        public void MinDepthTest()
+        {
+            var result = TreeAssignment.MinDepth(CreateTree());
+        }
+
+        [Test]
+        public void LevelOrderTest()
+        {
+            var result = TreeAssignment.LevelOrder(CreateTree());
+        }
+
         private TreeNode CreateTree()
         {
             TreeNode node1 = new TreeNode(1);
