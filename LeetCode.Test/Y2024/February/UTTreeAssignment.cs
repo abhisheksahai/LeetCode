@@ -33,6 +33,12 @@ namespace LeetCode.Test.Y2024.February
             var result = TreeAssignment.MaxDepth(CreateTree());
         }
 
+        [Test]
+        public void ZigzagLevelOrderTest()
+        {
+            var result = TreeAssignment.ZigzagLevelOrder(CreateTree());
+        }
+
         private TreeNode CreateTree()
         {
             TreeNode node1 = new TreeNode(1);

@@ -31,7 +31,6 @@
             return result;
         }
 
-
         /// <summary>
         /// https://leetcode.com/problems/binary-tree-inorder-traversal/
         /// </summary>
@@ -154,6 +153,18 @@
                 curDepth++;
             }
             return maxDepth;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public IList<IList<int>> ZigzagLevelOrder(TreeNode root)
+        {
+            IList<IList<int>> result = [];
+            if(root==null) return result;
+            return result;
         }
     }
 }
