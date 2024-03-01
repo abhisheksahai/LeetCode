@@ -160,7 +160,7 @@
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public IList<IList<int>> ZigzagLevelOrder(TreeNode root)
+        public static IList<IList<int>> ZigzagLevelOrder(TreeNode root)
         {
             IList<IList<int>> result = [];
             if(root==null) return result;
