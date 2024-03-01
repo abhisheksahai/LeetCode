@@ -27,6 +27,12 @@ namespace LeetCode.Test.Y2024.February
             var result = TreeAssignment.LevelOrder(CreateTree());
         }
 
+        [Test]
+        public void MaxDepthTest()
+        {
+            var result = TreeAssignment.MaxDepth(CreateTree());
+        }
+
         private TreeNode CreateTree()
         {
             TreeNode node1 = new TreeNode(1);
