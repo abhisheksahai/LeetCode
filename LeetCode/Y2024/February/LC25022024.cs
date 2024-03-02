@@ -279,5 +279,58 @@
             }
             return 1 + CountNodes(root.left) + CountNodes(root.right);
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/maximum-depth-of-binary-tree/
+        /// Tc=O(N) and SC=O(N)
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public int MaxDepth(TreeNode root)
+        {
+            if (root == null) return 0;
+            int maxDepth = 0;
+            int curDepth = 0;
+            Queue<TreeNode> queue = [];
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                int size = queue.Count;
+                while (size > 0)
+                {
+                    TreeNode node = queue.Dequeue();
+                    if (node.left != null)
+                    {
+                        queue.Enqueue(node.left);
+                    }
+                    if (node.right != null)
+                    {
+                        queue.Enqueue(node.right);
+                    }
+                    if (node.left == null && node.right == null)
+                    {
+                        maxDepth = Math.Max(maxDepth, curDepth + 1);
+                    }
+                    size--;
+                }
+                curDepth++;
+            }
+            return maxDepth;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/maximum-depth-of-binary-tree/
+        /// TC=O() and SC=O()
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static int MaxDepthWithDFS(TreeNode root)
+        {
+            if (root == null) return 0;
+            int leftCount = MaxDepthWithDFS(root.left);
+            int rightCount = MaxDepthWithDFS(root.right);
+            return Math.Max(leftCount, rightCount) + 1;
+        }
+
     }
 }

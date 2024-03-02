@@ -65,6 +65,12 @@ namespace LeetCode.Test.Y2024.February
             var result = LC25022024.DeepestLeavesSum(CreateTreeWithNodes());
         }
 
+        [Test]
+        public void MaxDepthWithDFSTest()
+        {
+            var result = LC25022024.MaxDepthWithDFS(CreateTreeWithNodes());
+        }
+
         private Node CreateTree()
         {
             Node node1 = new Node(1);
