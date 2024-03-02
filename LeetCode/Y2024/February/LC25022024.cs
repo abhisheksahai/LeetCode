@@ -161,7 +161,7 @@
         {
             List<int> result = [];
             if (root == null) return result;
-            if(k == 0)
+            if (k == 0)
             {
                 result.Add(root.val);
                 return result;
@@ -196,12 +196,46 @@
                     }
                     size--;
                 }
-                if(currentDistance == k)
+                if (currentDistance == k)
                 {
                     return result;
                 }
             }
             return result;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/deepest-leaves-sum/
+        /// Tc=O(N) and SC=O(N) N is the number of noeds
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static int DeepestLeavesSum(TreeNode root)
+        {
+            if (root == null) return 0;
+            int sum = 0;
+            Queue<TreeNode> queue = [];
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                int size = queue.Count;
+                sum = 0;
+                while (size > 0)
+                {
+                    TreeNode node = queue.Dequeue();
+                    sum += node.val;
+                    if (node.left != null)
+                    {
+                        queue.Enqueue(node.left);
+                    }
+                    if(node.right!= null)
+                    {
+                        queue.Enqueue(node.right);
+                    }
+                    size--;
+                }
+            }
+            return sum;
         }
 
     }
