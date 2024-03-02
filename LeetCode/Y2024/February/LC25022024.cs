@@ -228,7 +228,7 @@
                     {
                         queue.Enqueue(node.left);
                     }
-                    if(node.right!= null)
+                    if (node.right != null)
                     {
                         queue.Enqueue(node.right);
                     }
@@ -238,5 +238,46 @@
             return sum;
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/count-complete-tree-nodes/
+        /// For perfect binary tree total number of node = (2^n)-1
+        /// If left nodes count != right nodes count, its complate binary tree
+        /// Split the tree in left and right sub tree
+        /// Apply formula for perfect binary tree (PBT)
+        /// Sum = 1 + Sum(left subtree) + Sum (right subtree)
+        /// In case of complete binary tree all nodes will be as left as possible
+        /// TC=log(n) and SC=log)n), How ? Try to analyse
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static int CountNodes(TreeNode root)
+        {
+            if (root == null) return 0;
+            int leftCount = 0;
+            int rightCount = 0;
+            if (root.left != null)
+            {
+                TreeNode leftNode = root;
+                while (leftNode.left != null)
+                {
+                    leftNode = leftNode.left;
+                    leftCount++;
+                }
+            }
+            if (root.right != null)
+            {
+                TreeNode rightNode = root;
+                while (rightNode.right != null)
+                {
+                    rightNode = rightNode.right;
+                    rightCount++;
+                }
+            }
+            if (leftCount == rightCount)
+            {
+                return (int)Math.Pow(2, leftCount) - 1;
+            }
+            return 1 + CountNodes(root.left) + CountNodes(root.right);
+        }
     }
 }
