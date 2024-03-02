@@ -332,5 +332,18 @@
             return Math.Max(leftCount, rightCount) + 1;
         }
 
+        /// <summary>
+        /// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+        /// Asked a lot in Amazon
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="p"></param>
+        /// <param name="q"></param>
+        /// <returns></returns>
+        public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+        {
+
+        }
+
     }
 }
