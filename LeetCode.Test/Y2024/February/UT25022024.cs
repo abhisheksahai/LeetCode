@@ -71,6 +71,31 @@ namespace LeetCode.Test.Y2024.February
             var result = LC25022024.MaxDepthWithDFS(CreateTreeWithNodes());
         }
 
+        [Test]
+        public void ConnectTest()
+        {
+            var result = LC25022024.Connect(CreateNodeNextTree());
+        }
+
+        private NodeNext CreateNodeNextTree()
+        {
+            NodeNext node1 = new NodeNext(1);
+            NodeNext node2 = new NodeNext(2);
+            NodeNext node3 = new NodeNext(3);
+            NodeNext node4 = new NodeNext(4);
+            NodeNext node5 = new NodeNext(5);
+            NodeNext node6 = new NodeNext(6);
+            NodeNext node7 = new NodeNext(7);
+            node1.left = node2;
+            node1.right = node3;
+            node2.left = node4;
+            node2.right = node5;
+            node3.left = node6;
+            node3.right = node7;
+            return node1;
+        }
+
+
         private Node CreateTree()
         {
             Node node1 = new Node(1);

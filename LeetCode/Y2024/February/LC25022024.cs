@@ -342,7 +342,48 @@
         /// <returns></returns>
         public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
         {
+            return root;
+        }
 
+        public class NodeNext
+        {
+            public int val;
+            public NodeNext left;
+            public NodeNext right;
+            public NodeNext next;
+
+            public NodeNext() { }
+
+            public NodeNext(int _val)
+            {
+                val = _val;
+            }
+
+            public NodeNext(int _val, NodeNext _left, NodeNext _right, NodeNext _next)
+            {
+                val = _val;
+                left = _left;
+                right = _right;
+                next = _next;
+            }
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static NodeNext Connect(NodeNext root)
+        {
+            if (root == null) return root;
+            if (root.left != null)
+            {
+                root.left.next = root.right;
+                root.right.next = root.next?.left;
+                Connect(root.left);
+                Connect(root.right);
+            }
+            return root;
         }
 
     }
