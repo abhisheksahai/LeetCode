@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Y2024.February
+﻿using System.Collections.Generic;
+
+namespace LeetCode.Y2024.February
 {
     /// <summary>
     /// Binary tree. Each node will have 0, 1 or 2 elements only
@@ -246,7 +248,7 @@
         /// Apply formula for perfect binary tree (PBT)
         /// Sum = 1 + Sum(left subtree) + Sum (right subtree)
         /// In case of complete binary tree all nodes will be as left as possible
-        /// TC=log(n) and SC=log)n), How ? Try to analyse
+        /// TC=O(log n) and SC=O(log n), How ? Try to analyse
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
@@ -257,6 +259,7 @@
             int rightCount = 0;
             if (root.left != null)
             {
+                leftCount = 1;
                 TreeNode leftNode = root;
                 while (leftNode.left != null)
                 {
@@ -266,6 +269,7 @@
             }
             if (root.right != null)
             {
+                rightCount = 1;
                 TreeNode rightNode = root;
                 while (rightNode.right != null)
                 {
@@ -273,8 +277,9 @@
                     rightCount++;
                 }
             }
-            if (leftCount == rightCount)
+            if (leftCount!=0 && leftCount == rightCount)
             {
+                //Formula to get number of nodes in perfect binary tree
                 return (int)Math.Pow(2, leftCount) - 1;
             }
             return 1 + CountNodes(root.left) + CountNodes(root.right);
@@ -387,5 +392,17 @@
             return root;
         }
 
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/0
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static List<int> verticalOrder(Node root)
+        {
+            List<int> result = [];
+
+            return result;
+        }
     }
 }
