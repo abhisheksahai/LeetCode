@@ -277,7 +277,7 @@ namespace LeetCode.Y2024.February
                     rightCount++;
                 }
             }
-            if (leftCount!=0 && leftCount == rightCount)
+            if (leftCount != 0 && leftCount == rightCount)
             {
                 //Formula to get number of nodes in perfect binary tree
                 return (int)Math.Pow(2, leftCount) - 1;
@@ -345,9 +345,16 @@ namespace LeetCode.Y2024.February
         /// <param name="p"></param>
         /// <param name="q"></param>
         /// <returns></returns>
-        public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+        public static TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
         {
-            return root;
+            if (root == null) return null;
+            if (root == p || root == q) return root;
+            var left = LowestCommonAncestor(root.left, p, q);
+            var right = LowestCommonAncestor(root.right, p, q);
+            if (left == null && right == null) return null;
+            if (left != null && right != null) return root;
+            if (right == null) return left;
+            return right;
         }
 
         public class NodeNext
@@ -391,7 +398,6 @@ namespace LeetCode.Y2024.February
             }
             return root;
         }
-
 
         /// <summary>
         /// https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/0
