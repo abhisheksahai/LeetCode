@@ -14,6 +14,29 @@ namespace LeetCode.Y2024.February
             public Node? right = right;
         }
 
+        public class NodeNext
+        {
+            public int val;
+            public NodeNext left;
+            public NodeNext right;
+            public NodeNext next;
+
+            public NodeNext() { }
+
+            public NodeNext(int _val)
+            {
+                val = _val;
+            }
+
+            public NodeNext(int _val, NodeNext _left, NodeNext _right, NodeNext _next)
+            {
+                val = _val;
+                left = _left;
+                right = _right;
+                next = _next;
+            }
+        }
+
         /// <summary>
         /// BST : PreOrder traversal (Data, Left, Right)
         /// TC=O(N) as it will travel n nodes
@@ -357,27 +380,32 @@ namespace LeetCode.Y2024.February
             return right;
         }
 
-        public class NodeNext
+        /// <summary>
+        /// https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="target"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public IList<int> DistanceK(TreeNode root, TreeNode target, int k)
         {
-            public int val;
-            public NodeNext left;
-            public NodeNext right;
-            public NodeNext next;
+            List<int> result = [];
+            return result;
+        }
 
-            public NodeNext() { }
-
-            public NodeNext(int _val)
+        private void CreateParentDictionary(TreeNode root, Dictionary<TreeNode, TreeNode> dict)
+        {
+            if (root == null) return;
+            if (root.left != null)
             {
-                val = _val;
+                dict.Add(root.left, root);
             }
-
-            public NodeNext(int _val, NodeNext _left, NodeNext _right, NodeNext _next)
+            if (root.right != null)
             {
-                val = _val;
-                left = _left;
-                right = _right;
-                next = _next;
+                dict.Add(root.right, root);
             }
+            CreateParentDictionary(root.left, dict);
+            CreateParentDictionary(root.right, dict);
         }
 
         /// <summary>
