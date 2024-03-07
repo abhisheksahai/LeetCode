@@ -390,6 +390,8 @@ namespace LeetCode.Y2024.February
         public IList<int> DistanceK(TreeNode root, TreeNode target, int k)
         {
             List<int> result = [];
+            if(root == null) return result;
+
             return result;
         }
 
