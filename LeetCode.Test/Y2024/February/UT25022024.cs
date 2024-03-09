@@ -113,6 +113,12 @@ namespace LeetCode.Test.Y2024.February
             var result = LC25022024.LowestCommonAncestor(node1, node4, node7);
         }
 
+        [Test]
+        public void DiameterTest()
+        {
+            var result = LC25022024.Diameter(CreateTree());
+        }
+
         #region "Create Tree"
         private NodeNext CreateNodeNextTree()
         {

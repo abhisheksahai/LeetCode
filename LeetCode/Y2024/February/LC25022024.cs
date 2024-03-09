@@ -390,7 +390,7 @@ namespace LeetCode.Y2024.February
         public IList<int> DistanceK(TreeNode root, TreeNode target, int k)
         {
             List<int> result = [];
-            if(root == null) return result;
+            if (root == null) return result;
 
             return result;
         }
@@ -434,11 +434,80 @@ namespace LeetCode.Y2024.February
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public static List<int> verticalOrder(Node root)
+        public static List<int> VerticalOrder(Node root)
         {
             List<int> result = [];
 
             return result;
+        }
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static int Diameter(Node? root)
+        {
+            if (root == null) return 0;
+
+            int leftHeight = Height(root.left);
+            int rightHeight = Height(root.right);
+
+            int leftDiameter = Diameter(root.left);
+            int rightDiameter = Diameter(root.right);
+            int maxHeight = leftHeight + rightHeight + 1;
+            int maxDiameter = Math.Max(leftDiameter, rightDiameter);
+            return Math.Max(maxHeight, maxDiameter);
+
+        }
+
+        /// <summary>
+        /// Helper method to get the height of the tree
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        private static int Height(Node? root)
+        {
+            if (root == null) return 0;
+            int leftCount = Height(root.left);
+            int rightCount = Height(root.right);
+            return Math.Max(leftCount, rightCount) + 1;
+        }
+
+        //Binary search tree.
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/check-for-bst/1
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static bool isBST(Node root)
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/insert-a-node-in-a-bst/1
+        /// Tc=O(logn) and SC=O(1)
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static Node? Insert(Node? node, int key)
+        {
+            if (node == null)
+            {
+                return new Node(key);
+            };
+            if (key < node.val)
+            {
+                node.left = Insert(node.left, key);
+            }
+            if (key > node.val)
+            {
+                node.right = Insert(node.right, key);
+            }
+            return node;
         }
     }
 }
