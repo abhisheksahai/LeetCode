@@ -116,7 +116,7 @@ namespace LeetCode.Test.Y2024.February
         [Test]
         public void DiameterTest()
         {
-            var result = LC25022024.Diameter(CreateTree());
+            var result = LC25022024.DiameterSolution.Diameter(CreateTree());
         }
 
         #region "Create Tree"

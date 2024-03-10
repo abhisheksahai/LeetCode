@@ -444,21 +444,24 @@ namespace LeetCode.Y2024.February
         /// <summary>
         /// https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1
         /// </summary>
-        /// <param name="root"></param>
-        /// <returns></returns>
-        public static int Diameter(Node? root)
+        public static class DiameterSolution
         {
-            if (root == null) return 0;
+            static int maxDiameter = 0;
+            public static int Diameter(Node? root)
+            {
+                maxDiameter = 0;
+                FindDiameter(root);
+                return maxDiameter;
+            }
 
-            int leftHeight = Height(root.left);
-            int rightHeight = Height(root.right);
-
-            int leftDiameter = Diameter(root.left);
-            int rightDiameter = Diameter(root.right);
-            int maxHeight = leftHeight + rightHeight + 1;
-            int maxDiameter = Math.Max(leftDiameter, rightDiameter);
-            return Math.Max(maxHeight, maxDiameter);
-
+            public static int FindDiameter(Node? root)
+            {
+                if (root == null) return 0;
+                int leftHeight = FindDiameter(root.left);
+                int rightHeight = FindDiameter(root.right);
+                maxDiameter = Math.Max(maxDiameter, leftHeight + rightHeight + 1);
+                return Math.Max(leftHeight, rightHeight) + 1;
+            }
         }
 
         /// <summary>
