@@ -464,29 +464,23 @@ namespace LeetCode.Y2024.February
             }
         }
 
-        /// <summary>
-        /// Helper method to get the height of the tree
-        /// </summary>
-        /// <param name="root"></param>
-        /// <returns></returns>
-        private static int Height(Node? root)
-        {
-            if (root == null) return 0;
-            int leftCount = Height(root.left);
-            int rightCount = Height(root.right);
-            return Math.Max(leftCount, rightCount) + 1;
-        }
-
-        //Binary search tree.
+        //Binary search tree. lst<=root<=rst
+        //lst : left subtree and rst = right sub tree
 
         /// <summary>
         /// https://www.geeksforgeeks.org/problems/check-for-bst/1
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public static bool isBST(Node root)
+        public static bool IsBST(Node root)
         {
             return false;
+        }
+
+        public static bool BstHelper(Node root, int minMalue, int maxValue)
+        {
+
+            return true;
         }
 
         /// <summary>
