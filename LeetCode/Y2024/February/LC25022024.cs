@@ -510,6 +510,17 @@ namespace LeetCode.Y2024.February
             return node;
         }
 
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/delete-a-node-from-bst/1
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="X"></param>
+        /// <returns></returns>
+        public Node deleteNode(Node root, int X)
+        {
+            return root;
+        }
+
 
     }
 }
