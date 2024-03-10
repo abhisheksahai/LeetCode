@@ -474,13 +474,16 @@ namespace LeetCode.Y2024.February
         /// <returns></returns>
         public static bool IsBST(Node root)
         {
-            return false;
+            return BstHelper(root, Int32.MinValue, Int32.MaxValue);
         }
 
         public static bool BstHelper(Node root, int minMalue, int maxValue)
         {
-
-            return true;
+            if (root == null) return true;
+            if (root.val <= minMalue || root.val >= maxValue) return false;
+            bool left = BstHelper(root.left, minMalue, root.val);
+            bool right = BstHelper(root.right, root.val, maxValue);
+            return left && right;
         }
 
         /// <summary>
@@ -506,5 +509,7 @@ namespace LeetCode.Y2024.February
             }
             return node;
         }
+
+
     }
 }
