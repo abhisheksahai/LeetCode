@@ -429,6 +429,13 @@ namespace LeetCode.Y2024.February
             return root;
         }
 
+
+        public class MyPair(LC25022024.Node node, int hd)
+        {
+            private Node _node = node;
+            private int _hd = hd;
+        }
+
         /// <summary>
         /// https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/0
         /// </summary>
@@ -437,7 +444,9 @@ namespace LeetCode.Y2024.February
         public static List<int> VerticalOrder(Node root)
         {
             List<int> result = [];
-
+            SortedDictionary<int, List<int>> keyValuePairs = [];
+            Queue<MyPair> queue = [];
+            
             return result;
         }
 
@@ -521,6 +530,49 @@ namespace LeetCode.Y2024.February
             return root;
         }
 
+
+        /// <summary>
+        /// Tc=O(N) and SC=O(1)
+        /// </summary>
+        /// <param name="root"></param>
+        public void MorrisTraverse(Node root)
+        {
+            Node curr = root;
+            while (curr != null)
+            {
+                if (curr.left == null)
+                {
+                    Console.WriteLine(curr.val);
+                    curr = curr.right;
+                }
+                else
+                {
+                    Node left = curr.left;
+                    while (left.right != null)
+                    {
+                        left = left.right;
+                    }
+                    left.right = curr;
+                    Node temp = curr;
+                    curr = curr.left;
+                    temp.left = null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/construct-tree-1/1
+        /// </summary>
+        /// <param name="inorder"></param>
+        /// <param name="preorder"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static Node buildTree(int[] inorder, int[] preorder, int n)
+        {
+            if (n == 0) return null;
+            Node node = new Node(preorder[0]);
+            return node;
+        }
 
     }
 }
