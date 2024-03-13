@@ -117,7 +117,6 @@ namespace LeetCode.Y2024.February
             return sum;
         }
 
-
         /// <summary>
         /// https://leetcode.com/problems/binary-tree-level-order-traversal/
         /// </summary>
@@ -432,8 +431,8 @@ namespace LeetCode.Y2024.February
 
         public class MyPair(LC25022024.Node node, int hd)
         {
-            private Node _node = node;
-            private int _hd = hd;
+            public Node node = node;
+            public int hd = hd;
         }
 
         /// <summary>
@@ -446,7 +445,37 @@ namespace LeetCode.Y2024.February
             List<int> result = [];
             SortedDictionary<int, List<int>> keyValuePairs = [];
             Queue<MyPair> queue = [];
-            
+            queue.Enqueue(new MyPair(root, 0));
+            while (queue.Count > 0)
+            {
+                MyPair pair = queue.Dequeue();
+                Node node = pair.node;
+                int hd = pair.hd;
+
+                if (keyValuePairs.ContainsKey(hd))
+                {
+                    List<int> kv = keyValuePairs[hd];
+                    kv.Add(node.val);
+                    keyValuePairs[hd] = kv;
+                }
+                else
+                {
+                    keyValuePairs.Add(hd, new List<int>() { node.val });
+                }
+
+                if (node.left != null)
+                {
+                    queue.Enqueue(new MyPair(node.left, hd - 1));
+                }
+                if (node.right != null)
+                {
+                    queue.Enqueue(new MyPair(node.right, hd + 1));
+                }
+            }
+            foreach (var item in keyValuePairs)
+            {
+                result.AddRange(item.Value);
+            }
             return result;
         }
 

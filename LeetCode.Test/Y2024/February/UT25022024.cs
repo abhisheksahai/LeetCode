@@ -119,6 +119,12 @@ namespace LeetCode.Test.Y2024.February
             var result = LC25022024.DiameterSolution.Diameter(CreateTree());
         }
 
+        [Test]
+        public void VerticalOrderTest()
+        {
+            var result = LC25022024.VerticalOrder(CreateTree());
+        }
+
         #region "Create Tree"
         private NodeNext CreateNodeNextTree()
         {
