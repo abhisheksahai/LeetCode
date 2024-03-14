@@ -125,6 +125,12 @@ namespace LeetCode.Test.Y2024.February
             var result = LC25022024.VerticalOrder(CreateTree());
         }
 
+        [Test]
+        public void DeleteNodeTest()
+        {
+            var result = LC25022024.DeleteNode(CreateTree(), 3);
+        }
+
         #region "Create Tree"
         private NodeNext CreateNodeNextTree()
         {
@@ -179,6 +185,25 @@ namespace LeetCode.Test.Y2024.February
             node3.right = node7;
             return node1;
         }
+
+        private Node CreateBinaryTree()
+        {
+            Node node1 = new Node(200);
+            Node node2 = new Node(150);
+            Node node3 = new Node(250);
+            Node node4 = new Node(100);
+            Node node5 = new Node(190);
+            Node node6 = new Node(240);
+            Node node7 = new Node(290);
+            node1.left = node2;
+            node1.right = node3;
+            node2.left = node4;
+            node2.right = node5;
+            node3.left = node6;
+            node3.right = node7;
+            return node1;
+        }
+
         #endregion
     }
 }

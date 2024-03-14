@@ -554,9 +554,53 @@ namespace LeetCode.Y2024.February
         /// <param name="root"></param>
         /// <param name="X"></param>
         /// <returns></returns>
-        public Node deleteNode(Node root, int X)
+        public static Node DeleteNode(Node root, int x)
         {
+            if (root == null)
+            {
+                return null;
+            }
+            if (x < root.val)
+            {
+                root = DeleteNode(root.left, x);
+            }
+            else if (x > root.val)
+            {
+                root = DeleteNode(root.right, x);
+            }
+            else
+            {
+                if (root.left == null && root.right == null)
+                {
+                    root = null;
+                }
+                else if (root.left != null && root.right == null)
+                {
+                    root = root.left;
+                }
+                else if (root.left == null && root.right != null)
+                {
+                    root = root.right;
+                }
+                else
+                {
+                    int minRight = MinRightSubTree(root);
+                    root.val = minRight;
+                    root.right = DeleteNode(root.right, minRight);
+                }
+            }
             return root;
+        }
+
+        private static int MinRightSubTree(Node node)
+        {
+            int min = node.val;
+            while (node.left != null)
+            {
+                node = node.left;
+            }
+            min = node.val;
+            return min;
         }
 
 
