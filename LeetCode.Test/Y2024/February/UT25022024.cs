@@ -128,7 +128,7 @@ namespace LeetCode.Test.Y2024.February
         [Test]
         public void DeleteNodeTest()
         {
-            var result = LC25022024.DeleteNode(CreateTree(), 3);
+            var result = LC25022024.DeleteNode(CreateBinaryTree(), 250);
         }
 
         #region "Create Tree"

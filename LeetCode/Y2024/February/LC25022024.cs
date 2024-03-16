@@ -560,7 +560,7 @@ namespace LeetCode.Y2024.February
             {
                 return null;
             }
-            if (x < root.val)
+            else if (x < root.val)
             {
                 root = DeleteNode(root.left, x);
             }
@@ -574,17 +574,17 @@ namespace LeetCode.Y2024.February
                 {
                     root = null;
                 }
-                else if (root.left != null && root.right == null)
-                {
-                    root = root.left;
-                }
-                else if (root.left == null && root.right != null)
+                else if (root.left == null)
                 {
                     root = root.right;
                 }
+                else if (root.right == null)
+                {
+                    root = root.left;
+                }
                 else
                 {
-                    int minRight = MinRightSubTree(root);
+                    int minRight = MinRightSubTree(root.right);
                     root.val = minRight;
                     root.right = DeleteNode(root.right, minRight);
                 }
