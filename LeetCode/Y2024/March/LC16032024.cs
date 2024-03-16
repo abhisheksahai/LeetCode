@@ -28,5 +28,10 @@
                 return false;
             }
         }
+
+        public static string LongestCommonPrefix(string[] strs)
+        {
+            return "";
+        }
     }
 }
