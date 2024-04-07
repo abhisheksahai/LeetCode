@@ -92,5 +92,18 @@
                 Heapify(arr, N, largest);
             }
         }
+
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/merge-k-sorted-arrays/1
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="K"></param>
+        /// <returns></returns>
+        public static List<int> MergeKArrays(List<List<int>> arr, int K)
+        {
+            List<int> result = new List<int>();
+            return result;
+        }
     }
 }
