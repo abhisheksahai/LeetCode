@@ -65,7 +65,9 @@
         }
 
         /// <summary>
-        /// This is handle internally by framework if we use priority queue.Its better to know the logic
+        /// This is handled internally by framework if we use priority queue.Its better to know the logic
+        /// https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/
+        /// Tc=O(), SC=O()
         /// </summary>
         /// <param name="arr"></param>
         /// <param name="N"></param>
