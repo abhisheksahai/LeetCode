@@ -109,7 +109,28 @@
         //Dynamic Programming : Its about rememebring your past. It reduces TC by trading off time and space it uses extra space. It has two appproaches : Top down approach and Bottom Up approach
 
 
+        /// <summary>
+        /// https://leetcode.com/problems/climbing-stairs/
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int ClimbStairs(int n)
+        {
+            return 0;
+        }
 
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/distinct-coloring--170645/1
+        /// </summary>
+        /// <param name="N"></param>
+        /// <param name="r"></param>
+        /// <param name="g"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static long DistinctColoring(int N, int[] r, int[] g, int[] b)
+        {
+            return 0;
+        }
 
     }
 }
