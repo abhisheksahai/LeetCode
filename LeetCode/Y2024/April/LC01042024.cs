@@ -105,5 +105,11 @@
             List<int> result = new List<int>();
             return result;
         }
+
+        //Dynamic Programming : Its about rememebring your past. It reduces TC by trading off time and space it uses extra space. It has two appproaches : Top down approach and Bottom Up approach
+
+
+
+
     }
 }
