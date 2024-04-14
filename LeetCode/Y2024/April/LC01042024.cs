@@ -152,7 +152,7 @@
         }
 
         /// <summary>
-        /// 
+        /// TC=O(N) and SC=O(1)
         /// </summary>
         /// <param name="n"></param>
         public static int FibonacciSeriesWithBottomUpDP(int n)
@@ -175,12 +175,26 @@
 
         /// <summary>
         /// https://leetcode.com/problems/climbing-stairs/
+        /// TC=O(N) and SC=O(1)
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
         public static int ClimbStairs(int n)
         {
-            return 0;
+            if (n == 0 || n == 1)
+            {
+                return 1;
+            }
+            int a = 1;
+            int b = 1;
+            int c = 0;
+            for (int i = 2; i <= n; i++)
+            {
+                c = a + b;
+                a = b;
+                b = c;
+            }
+            return c;
         }
 
         /// <summary>
@@ -192,6 +206,41 @@
         /// <param name="b"></param>
         /// <returns></returns>
         public static long DistinctColoring(int N, int[] r, int[] g, int[] b)
+        {
+            return 0;
+        }
+
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1
+        /// </summary>
+        /// <param name="W"></param>
+        /// <param name="wt"></param>
+        /// <param name="val"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int KnapSack(int W, int[] wt, int[] val, int n)
+        {
+            return 0;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-common-subsequence/
+        /// </summary>
+        /// <param name="text1"></param>
+        /// <param name="text2"></param>
+        /// <returns></returns>
+        public static int LongestCommonSubsequence(string text1, string text2)
+        {
+            return 0;
+        }
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-increasing-subsequence/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public int LengthOfLIS(int[] nums)
         {
             return 0;
         }

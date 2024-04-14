@@ -46,5 +46,11 @@ namespace LeetCode.Test.Y2024.April
                 Console.WriteLine(LC01042024.FibonacciSeriesWithBottomUpDP(i));
             }
         }
+
+        [Test]
+        public void ClimbStairsTest()
+        {
+            var result = LC01042024.ClimbStairs(2);
+        }
     }
 }
