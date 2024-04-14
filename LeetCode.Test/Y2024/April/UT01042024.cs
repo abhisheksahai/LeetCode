@@ -37,5 +37,14 @@ namespace LeetCode.Test.Y2024.April
                 Console.WriteLine(LC01042024.FibonacciSeriesWithTopDownDP(i, dp));
             }
         }
+
+        [Test]
+        public void FibonacciSeriesWithBottomUpDPTest()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(LC01042024.FibonacciSeriesWithBottomUpDP(i));
+            }
+        }
     }
 }
