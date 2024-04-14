@@ -108,6 +108,48 @@
 
         //Dynamic Programming : Its about rememebring your past. It reduces TC by trading off time and space it uses extra space. It has two appproaches : Top down approach and Bottom Up approach
 
+        /// <summary>
+        /// Fibonacci Series
+        /// Tc=O(2^n) and SC=O(1)
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int FibonacciSeries(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                return n;
+            }
+            return FibonacciSeries(n - 1) + FibonacciSeries(n - 2);
+        }
+
+        /// <summary>
+        /// Dynamic programming top down approach.
+        /// Tc=O(N) and SC=O(N)
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int FibonacciSeriesWithTopDownDP(int n, int[] dp)
+        {
+            if (n == 0 || n == 1)
+            {
+                return n;
+            }
+            if (dp[n] != -1)
+            {
+                return dp[n];
+            }
+            if (dp[n - 1] == -1)
+            {
+                dp[n - 1] = FibonacciSeriesWithTopDownDP(n - 1, dp);
+            }
+            if (dp[n - 2] == -1)
+            {
+                dp[n - 2] = FibonacciSeriesWithTopDownDP(n - 2, dp);
+            }
+            dp[n] = dp[n - 1] + dp[n - 2];
+            return dp[n];
+        }
 
         /// <summary>
         /// https://leetcode.com/problems/climbing-stairs/
