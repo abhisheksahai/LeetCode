@@ -22,5 +22,15 @@
         {
             return 0;
         }
+
+        /// <summary>
+        ///  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
+        public int MaxProfit(int[] prices)
+        {
+            return 0;
+        }
     }
 }
